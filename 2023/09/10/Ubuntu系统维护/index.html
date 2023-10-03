@@ -1,0 +1,938 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.jpg">
+  <link rel="icon" href="/img/barbeicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#ec69c9">
+  <meta name="author" content="Jingrong Zeng">
+  <meta name="keywords" content="安卓开发, 贰蓉">
+  
+    <meta name="description" content="常用命令设置root用户密码： 1sudo passwd root  登录root用户： 1su root  查看文件夹信息： 1ls -l  查看文件夹： 1ls  Ubuntu命令大全 赛题01 使用SSH登录Ubuntu系统，将登录成功界面截图,另存为B-2-1.jpg。 请使用命令查询网络地址配置结果，请将查询结果界面截图（要求截图中可以看到具体的命令）,另存为B-2-2.jpg。 请将使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu系统维护">
+<meta property="og:url" content="https://zjingrong.xyz/2023/09/10/Ubuntu%E7%B3%BB%E7%BB%9F%E7%BB%B4%E6%8A%A4/index.html">
+<meta property="og:site_name" content="♪(´∪&#96;●)ゝ贰蓉的博客">
+<meta property="og:description" content="常用命令设置root用户密码： 1sudo passwd root  登录root用户： 1su root  查看文件夹信息： 1ls -l  查看文件夹： 1ls  Ubuntu命令大全 赛题01 使用SSH登录Ubuntu系统，将登录成功界面截图,另存为B-2-1.jpg。 请使用命令查询网络地址配置结果，请将查询结果界面截图（要求截图中可以看到具体的命令）,另存为B-2-2.jpg。 请将使">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zjingrong.xyz/img/articles/ubuntu/02%E9%A2%981.jpg">
+<meta property="og:image" content="https://zjingrong.xyz/img/articles/ubuntu/02%E9%A2%982.jpg">
+<meta property="og:image" content="https://zjingrong.xyz/img/articles/ubuntu/B-2-1.jpg">
+<meta property="article:published_time" content="2023-09-10T02:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-03T07:19:58.417Z">
+<meta property="article:author" content="Jingrong Zeng">
+<meta property="article:tag" content="Ubuntu系统维护">
+<meta property="article:tag" content="22年赛题">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zjingrong.xyz/img/articles/ubuntu/02%E9%A2%981.jpg">
+  
+  
+  
+  <title>Ubuntu系统维护 - ♪(´∪`●)ゝ贰蓉的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"zjingrong.xyz","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"♥","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"♥"},"progressbar":{"enable":true,"height_px":3,"color":"#ec69c9","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"Java"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>error&#39;s blog (●&#39;◡&#39;●)</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/barbe.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Ubuntu系统维护"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-10 10:00" pubdate>
+          2023年9月10日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          36 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Ubuntu系统维护</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年10月3日 下午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>设置root用户密码：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo passwd root</span><br></code></pre></td></tr></table></figure>
+
+<p>登录root用户：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">su root</span><br></code></pre></td></tr></table></figure>
+
+<p>查看文件夹信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> -l<br></code></pre></td></tr></table></figure>
+
+<p>查看文件夹：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span><br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/76827666">Ubuntu命令大全</a></p>
+<h2 id="赛题01"><a href="#赛题01" class="headerlink" title="赛题01"></a>赛题01</h2><ul>
+<li>使用SSH登录Ubuntu系统，将登录成功界面截图,另存为B-2-1.jpg。</li>
+<li>请使用命令查询网络地址配置结果，请将查询结果界面截图（要求截图中可以看到具体的命令）,另存为B-2-2.jpg。</li>
+<li>请将使用命令查询系统运行时间及负载的状态的界面截图,另存为B-2-3.jpg。</li>
+<li>请将使用命令查看文件系统磁盘空间使用情况的界面截图，另存为B-2-4.jpg。</li>
+<li>请将使用命令查看统计系统IO信息的界面截图，另存为B-2-5.jpg。</li>
+</ul>
+<ol>
+<li>在服务器电脑上使用ssh登陆Ubuntu系统：</li>
+</ol>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> 用户名<span class="hljs-variable">@ip</span>地址<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>查询网络地址配置：</li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ifconfig</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>查询系统运行时间以及负载状态：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">uptime</span> <br>w<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>查看文件系统磁盘使用情况：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">df</span> -h<br></code></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>查看统计系统IO信息：</li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">iostat</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="赛题02"><a href="#赛题02" class="headerlink" title="赛题02"></a>赛题02</h2><ul>
+<li>利用虚拟机管理工具成功登录Ubuntu系统后界面截图,另存为B-2-1.jpg。</li>
+<li>完成虚拟机IP地址设置后，请使用命令查询当前网络IP地址，请将查询结果界面截图（要求截图中可以看到具体的命令）,另存为B-2-2.jpg。</li>
+<li>将root用户登录密码更改为iot123456，将设置界面截屏，要求体现更改密码的命令行语句，截图另存为B-2-3.jpg。</li>
+<li>给Ubuntu系统开通root用户SSH权限设置界面截屏，在截图上用红圈圈出关键的设置项，截图另存为B-2-4.jpg。</li>
+<li>利用ssh客户端软件成功登录Ubuntu系统后的界面截图,要求截图体现登录客户端的IP地址，截图另存为B-2-5.jpg。</li>
+</ul>
+<ol>
+<li>用户名newland 密码newland</li>
+<li>查询网络地址：</li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ifconfig</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>更改root用户密码：</li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo passwd root</span><br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>开通root用户ssh权限：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> etc/ssh<br><span class="hljs-built_in">ls</span><br>sudo nano sshd_config<br></code></pre></td></tr></table></figure>
+
+<p>找到Authentication，将下面的#注释去掉，PermitRootLogin后面改为<code>yes</code>，保存后重启ssh服务：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo service ssh restart</span><br></code></pre></td></tr></table></figure>
+
+<p>再用ssh登录root发现登录成功。</p>
+<p><img src="/img/articles/ubuntu/02%E9%A2%981.jpg" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li><img src="/img/articles/ubuntu/02%E9%A2%982.jpg" srcset="/img/loading.gif" lazyload></li>
+</ol>
+<h2 id="赛题03"><a href="#赛题03" class="headerlink" title="赛题03"></a>赛题03</h2><p><strong>超级简单</strong></p>
+<ul>
+<li>请使用命令查询网络地址配置结果，请将查询结果界面截图（要求截图中可以看到具体的命令）,另存为B-1-2.jpg。</li>
+<li>请将使用命令设置系统拒绝IP为192.168.100.100这台PC机访问的界面截图,另存为B-1-3.jpg。</li>
+<li>请将使用命令在当前目录创建文件夹test的界面截图。另存为B-1-4.jpg。</li>
+</ul>
+<ol>
+<li>查询网络地址【同上】</li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ifconfig</span><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>拒绝某ip访问：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo iptables -<span class="hljs-selector-tag">A</span> <span class="hljs-selector-tag">INPUT</span> -s ip地址 -j DROP<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建文件夹：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> <span class="hljs-built_in">test</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="赛题04"><a href="#赛题04" class="headerlink" title="赛题04"></a>赛题04</h2><ul>
+<li>配置账户锁定策略，用户尝试登录失败5次后锁定用户5分钟，将配置界面截图另存为B-1-2.jpg。要求以上截图中可以看到要求的配置信息。</li>
+<li>配置账户密码最短使用期限为7天，最长使用期限为90天，将配置界面截图另存为B-1-3.jpg。要求以上截图中可以看到要求的配置信息。</li>
+<li>配置用户使用ssh登录系统时应该有“For authorized users only”登录提示。将含有登录提示信息的画面截图，另存为B-1-4.jpg。</li>
+<li>配置系统禁止192.168.100.36这个IP访问本系统，请将配置界面截图，另存为B-1-5.jpg。</li>
+</ul>
+<ol>
+<li>设置账户锁定策略：</li>
+</ol>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo nano /etc/pam.d/common-auth   # 本地终端 <br>auth required pam_tally2.so <span class="hljs-attribute">deny</span>=5 <span class="hljs-attribute">unlock_time</span>=300  <br><span class="hljs-comment"># 只对本地用户 deny表示登陆失败次数 unlock_time表示锁定300s</span><br>auth required pam_tally2.so <span class="hljs-attribute">deny</span>=3 <span class="hljs-attribute">unlock_time</span>=300 even_deny_root <span class="hljs-attribute">root_unlcok_time</span>=300  # 同时包含root用户<br>sudo nano /etc/pam.d/common-account<br>添加account required pam_tally2.so<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>设置账户密码使用时间：</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo nano <span class="hljs-regexp">/etc/</span>login.defs<br></code></pre></td></tr></table></figure>
+
+<p>找到PASS_MAS_DAYS 、PASS_MIN_DAY并修改，保存退出即可。</p>
+<ol start="3">
+<li>设置ssh登陆提示信息：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /etc/update-motd.d<br><span class="hljs-built_in">ls</span><br></code></pre></td></tr></table></figure>
+
+<p>随意编译其中一个文件（比如00-header）</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo nano ~ <br><span class="hljs-comment"># 添加一句：</span><br><span class="hljs-built_in">print</span> <span class="hljs-string">&quot;For authorized users only&quot;</span><br><span class="hljs-comment"># 保存退出</span><br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>配置禁止某ip访问【同上】：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo iptables -<span class="hljs-selector-tag">A</span> <span class="hljs-selector-tag">INPUT</span> -s <span class="hljs-number">192.168</span>.<span class="hljs-number">100.36</span> -j DROP<br></code></pre></td></tr></table></figure>
+
+<h2 id="赛题05"><a href="#赛题05" class="headerlink" title="赛题05"></a>赛题05</h2><p><strong>简单</strong></p>
+<ul>
+<li>请将使用命令创建test文件夹并授予777权限的界面截图，另存为B-2-2.jpg。要求截图中使用红色矩形框圈出创建文件夹的命令和授予777权限的命令。</li>
+<li>请将使用命令查看选手执行命令的历史记录的界面截图，另存为B-2-3.jpg。要求截图中使用红色矩形框圈出具体使用的命令。</li>
+<li>请将使用命令配置允许tcp协议通过eth0网卡的80端口进入服务器的界面截图，另存为B-2-4.jpg。要求截图中使用红色矩形框圈出具体使用的命令。</li>
+</ul>
+<ol>
+<li>授予文件夹权限：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> -R 777 <span class="hljs-built_in">test</span><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>查看命令历史记录：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">history</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>配置允许tcp协议通过eth0网卡的80端口进入服务器：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo ufw allow <span class="hljs-number">80</span><br>sudo iptables -<span class="hljs-selector-tag">A</span> <span class="hljs-selector-tag">INPUT</span> -<span class="hljs-selector-tag">p</span> tcp -<span class="hljs-selector-tag">i</span> eth0 <span class="hljs-attr">--dport</span> <span class="hljs-number">80</span> -j ACCEPT<br></code></pre></td></tr></table></figure>
+
+<h2 id="赛题06"><a href="#赛题06" class="headerlink" title="赛题06"></a>赛题06</h2><ul>
+<li>请将使用命令查询本系统已安装包信息的界面截图，另存为B-2-2.jpg。要求截图中使用红色矩形框圈出具体的命令。</li>
+<li>请将使用命令配置允许tcp协议通过eth0网卡的80端口进入服务器的界面截图，另存为B-2-3.jpg。要求截图中使用红色矩形框圈出具体使用的命令。</li>
+<li>请将使用命令查询USB设备详细描述信息的界面截图，另存为B-2-4.jpg。要求截图中使用红色矩形框圈出具体使用的命令。</li>
+</ul>
+<ol>
+<li>查询本系统已安装包信息：</li>
+</ol>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">apt list <span class="hljs-comment">--installed</span><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>配置允许tcp协议通过eth0网卡的80端口进入服务器【同上】：</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> ufw <span class="hljs-literal">allow</span> <span class="hljs-number">80</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>查询usb设备详细信息：</li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">lsusb</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="赛题07"><a href="#赛题07" class="headerlink" title="赛题07"></a>赛题07</h2><ul>
+<li>开通root用户SSH权限设置关键位置设置截图，用红圈圈出，另存为D-2-1.jpg。</li>
+<li>使用SSH工具Xshell，以root用户登录Ubuntu系统界面截图,要求截图体现登录端IP，另存为D-2-2.jpg。</li>
+<li>查询安装软件时下载包的临时存放目录，查询结果截屏要体现查询命令，另存为D-2-3.jpg。</li>
+<li>写出备份当前系统安装的所有包的列表的命令行语句，另存为D-2-4.txt。</li>
+<li>查看 &#x2F;home目录占用空间大小的界面截图，要求截图体现命令行语句，另存为D-2-5.jpg。</li>
+<li>查看当前外网ip地址的界面截图，要求截图体现命令行语句，另存为D-2-6.jpg。</li>
+</ul>
+<ol>
+<li>开通root用户ssh权限【同上】：</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo nano <span class="hljs-regexp">/etc/</span>ssh/sshd_config<br></code></pre></td></tr></table></figure>
+
+<p>修改Authenticaiton下PermitRootLogin项，去掉前面的#注释，后面改为yes，保存退出。</p>
+<ol start="2">
+<li><p>略。</p>
+</li>
+<li><p>查询安装软件时下载包的临时存放目录：</p>
+</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">ls <span class="hljs-regexp">/var/</span>cache<span class="hljs-regexp">/apt/</span>archives<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>备份当前系统安装的所有包的列表：</li>
+</ol>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">dpkg <span class="hljs-params">--get-selections</span> | grep -v deinstall &gt; ~<span class="hljs-string">/somefile</span><br></code></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>查看 &#x2F;home目录占用空间大小：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">du</span> -sh /home<br></code></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>查看当前外网ip地址：</li>
+</ol>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">curl ifconfig.<span class="hljs-keyword">me</span><br></code></pre></td></tr></table></figure>
+
+<p>3和4题目来源：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/76827666">Ubuntu命令大全</a></p>
+<h2 id="赛题08"><a href="#赛题08" class="headerlink" title="赛题08"></a>赛题08</h2><ul>
+<li>使用root账号，通过SSH客户端软件xShell登录Ubuntu系统，显示&#x2F;root文件夹的界面截图，另存为B-2-1.jpg。</li>
+<li>写出解决重启network遇到问题的命令行语句，另存为B-2-2.txt。</li>
+<li>将设置日期，时间和将时间写入CMOS的命令行语句（一行一句），写入B-2-3.TXT。</li>
+</ul>
+<ol>
+<li><p><img src="/img/articles/ubuntu/B-2-1.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+</li>
+<li><p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/a12355556/article/details/119976937">https://blog.csdn.net/a12355556/article/details/119976937</a></p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo service network-manager restart</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>YYYY-MM-DD等分别为数字填写格式，如2023-09-07</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs applescript">sudo <span class="hljs-built_in">date</span> -s <span class="hljs-string">&quot;YYYY-MM-DD&quot;</span> <span class="hljs-comment">#设置日期</span><br>sudo <span class="hljs-built_in">date</span> -s <span class="hljs-string">&quot;HH:MM:SS&quot;</span>   <span class="hljs-comment">#设置时间</span><br>sudo hwclock <span class="hljs-comment">--systohc    #将时间写入CMOS</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="赛题09"><a href="#赛题09" class="headerlink" title="赛题09"></a>赛题09</h2><ul>
+<li>使用SSH工具Xshell，以root用户登录Ubuntu系统，将登录成功界面截图,要求截图体现登录端IP，另存为B-2-1.jpg。</li>
+<li>请将使用命令查看系统当前登录用户信息，显示的资料包含了使用者 ID、使用的终端机、从哪边连上来的、上线时间、呆滞时间、CPU 使用量、动作等等，将显示结果的界面截图，另存为B-2-2.jpg。</li>
+<li>请将设置Ubuntu帐号密码的最小长度值在6位以上的界面截图，另存为B-2-3.jpg。</li>
+<li>请将设置Ubuntu帐号远程登录失败三次锁定60秒的界面截图，另存为B-2-4.jpg。</li>
+</ul>
+<ol>
+<li>略。</li>
+<li>查看当前登录用户信息：</li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">w</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>设置密码最小长度值：</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo nano <span class="hljs-regexp">/etc/</span>login.defs<br>添加一行PASS_MIN_LEN <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>设置远程登录失败三次锁定60秒【同上 04】：</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> nano /etc/pam.d/sshd                            # ssh远程登录 <br><span class="hljs-attribute">auth</span> required pam_tally2.so <span class="hljs-literal">deny</span>=<span class="hljs-number">3</span> unlock_time=<span class="hljs-number">60</span>   # 失败三次锁定<span class="hljs-number">60</span>秒<br></code></pre></td></tr></table></figure>
+
+<h2 id="赛题10"><a href="#赛题10" class="headerlink" title="赛题10"></a>赛题10</h2><p><strong>超级超级简单</strong></p>
+<ul>
+<li>请将使用命令查看Ubuntu系统配置IP结果界面截图，另存为B-2-1.jpg。要求截图中可以看到具体的命令、可以看到配置的IP信息。</li>
+<li>请将使用命令在当前目录下创建名为 test的文件夹的界面截图，另存为B-2-2.jpg。</li>
+<li>请将使用命令修改test文件夹权限为755的界面截图，另存为B-2-3.jpg。</li>
+</ul>
+<ol>
+<li>查看ip配置结果：</li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ifconfig</span><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在当前目录下创建test文件夹：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> <span class="hljs-built_in">test</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>修改test文件夹权限：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> 755 <span class="hljs-built_in">test</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Ubuntu%E7%B3%BB%E7%BB%9F%E7%BB%B4%E6%8A%A4/" class="print-no-link">#Ubuntu系统维护</a>
+      
+        <a href="/tags/22%E5%B9%B4%E8%B5%9B%E9%A2%98/" class="print-no-link">#22年赛题</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Ubuntu系统维护</div>
+      <div>https://zjingrong.xyz/2023/09/10/Ubuntu系统维护/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jingrong Zeng</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/11/Windows%E7%B3%BB%E7%BB%9F%E7%BB%B4%E6%8A%A4/" title="Windows系统维护">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Windows系统维护</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/25/hexo+github/" title="手把手教你使用Hexo+GitHub搭建个人博客并发布文章（附常见问题解决方法）">
+                        <span class="hidden-mobile">手把手教你使用Hexo+GitHub搭建个人博客并发布文章（附常见问题解决方法）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
