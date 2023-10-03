@@ -1,0 +1,910 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.jpg">
+  <link rel="icon" href="/img/barbeicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#ec69c9">
+  <meta name="author" content="Jingrong Zeng">
+  <meta name="keywords" content="安卓开发, 贰蓉">
+  
+    <meta name="description" content="新建工程 （每台新电脑需要设置的）setting –&gt; basic project import jar 并 添加依赖性  （右键-&gt; add as library） AndroidManifest.xml -&gt; add Internet Power,添加任务启动模式  12345&lt;uses-permission android:name&#x3D;&quot;android.per">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安卓笔记">
+<meta property="og:url" content="https://zjingrong.xyz/2023/07/28/android/index.html">
+<meta property="og:site_name" content="♪(´∪&#96;●)ゝ贰蓉的博客">
+<meta property="og:description" content="新建工程 （每台新电脑需要设置的）setting –&gt; basic project import jar 并 添加依赖性  （右键-&gt; add as library） AndroidManifest.xml -&gt; add Internet Power,添加任务启动模式  12345&lt;uses-permission android:name&#x3D;&quot;android.per">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zjingrong.xyz/2023/07/28/android/Users/88440/Desktop/%E4%B8%BB%E7%BA%BF-%E7%89%A9%E8%81%94%E7%BD%91%E7%AB%9E%E8%B5%9B/note_images/MainActivity%E4%B8%8E%E5%85%B6%E4%BB%96Activity%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2.png">
+<meta property="og:image" content="https://zjingrong.xyz/2023/07/28/android/Users/88440/Desktop/%E4%B8%BB%E7%BA%BF-%E7%89%A9%E8%81%94%E7%BD%91%E7%AB%9E%E8%B5%9B/note_images/%E5%9C%A8%E5%90%8E%E5%8F%B0%E9%94%80%E6%AF%81%E5%BA%94%E7%94%A8.png">
+<meta property="article:published_time" content="2023-07-28T02:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-28T07:27:14.143Z">
+<meta property="article:author" content="Jingrong Zeng">
+<meta property="article:tag" content="Android">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zjingrong.xyz/2023/07/28/android/Users/88440/Desktop/%E4%B8%BB%E7%BA%BF-%E7%89%A9%E8%81%94%E7%BD%91%E7%AB%9E%E8%B5%9B/note_images/MainActivity%E4%B8%8E%E5%85%B6%E4%BB%96Activity%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2.png">
+  
+  
+  
+  <title>安卓笔记 - ♪(´∪`●)ゝ贰蓉的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"zjingrong.xyz","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"♥","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"♥"},"progressbar":{"enable":true,"height_px":3,"color":"#ec69c9","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"Java"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>error&#39;s blog (●&#39;◡&#39;●)</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/barbe.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="安卓笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-28 10:00" pubdate>
+          2023年7月28日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          21k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          178 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">安卓笔记</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2023年8月28日 下午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h1><ol>
+<li>（每台新电脑需要设置的）setting –&gt; basic</li>
+<li>project</li>
+<li>import jar 并 添加依赖性  （右键-&gt; add as library）</li>
+<li>AndroidManifest.xml -&gt; add Internet Power,添加任务启动模式</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;uses-permission android:name=<span class="hljs-string">&quot;android.permission.INTERNET&quot;</span> /&gt;<br><br><br>&lt;!--application/acitvity中添加:--&gt;<br>android:launchMode=<span class="hljs-string">&quot;singleTask&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="ZigBee连接、获取数据与控制"><a href="#ZigBee连接、获取数据与控制" class="headerlink" title="ZigBee连接、获取数据与控制"></a>ZigBee连接、获取数据与控制</h1><h5 id="1-新建ZigBee类【全局变量】"><a href="#1-新建ZigBee类【全局变量】" class="headerlink" title="1.新建ZigBee类【全局变量】"></a>1.新建ZigBee类【全局变量】</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">ZigBee zigbee;<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-建立zigbee连接【onStart-】"><a href="#2-建立zigbee连接【onStart-】" class="headerlink" title="2.建立zigbee连接【onStart()】"></a>2.建立zigbee连接【onStart()】</h5><p>（tcp模式从串口服务器获取）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java">zigbee = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ZigBee</span>(DataBusFactory.newSocketDataBus(<span class="hljs-string">&quot;192.168.1.200&quot;</span>, <span class="hljs-number">6004</span>), <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConnectResultListener</span>() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onConnectResult</span><span class="hljs-params">(<span class="hljs-type">boolean</span> b)</span> &#123;<br>        <span class="hljs-keyword">if</span>(b) &#123;<br>            <span class="hljs-comment">//连接成功</span><br>            Log.d(<span class="hljs-string">&quot;TAG&quot;</span>,<span class="hljs-string">&quot;zigbee连接成功&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;);<br><span class="hljs-comment">//newSocketDataBus(串口服务器ip地址,端口号)</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="5-断开连接【onpause-】"><a href="#5-断开连接【onpause-】" class="headerlink" title="5.断开连接【onpause()】"></a>5.断开连接【onpause()】</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">zigbee.stopConnect();<br></code></pre></td></tr></table></figure>
+
+<h5 id="4-控制双联继电器"><a href="#4-控制双联继电器" class="headerlink" title="4.控制双联继电器"></a>4.控制双联继电器</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">zigbee.ctrlDoubleRelay(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-literal">true</span>,<span class="hljs-literal">null</span>);<br><span class="hljs-comment">//第一个参数：序列号，第二个：双联的第几联，第三个：设置状态（打开或关闭），第四个：控制事件</span><br><span class="hljs-comment">//需要抛出异常</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="5-获取温湿度"><a href="#5-获取温湿度" class="headerlink" title="5.获取温湿度"></a>5.获取温湿度</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">double</span>[]  values = zigbee.getTmpHum();<br><span class="hljs-type">double</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> values[<span class="hljs-number">0</span>];<br><span class="hljs-type">double</span> <span class="hljs-variable">hum</span> <span class="hljs-operator">=</span> values[<span class="hljs-number">1</span>];<br><span class="hljs-comment">//数组里第一个是温度，第二个是湿度。</span><br><span class="hljs-comment">//需要抛出异常</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="6-获取四模拟量输入"><a href="#6-获取四模拟量输入" class="headerlink" title="6.获取四模拟量输入"></a>6.获取四模拟量输入</h5><p>使用FourChannelValConvert类的静态方法来转换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-type">double</span>[] values = zigbee.getFourEnter();<br>    <span class="hljs-comment">//方法需要抛出异常</span><br>    <br>    <span class="hljs-comment">//数组的数据是按实际连接顺序获取的。</span><br>    temp = BigDecimal.valueOf(FourChannelValConvert.getTemperature(values[<span class="hljs-number">0</span>])).setScale(<span class="hljs-number">2</span>,BigDecimal.ROUND_HALF_UP).doubleValue();<br>    hum = BigDecimal.valueOf(FourChannelValConvert.getHumidity(values[<span class="hljs-number">1</span>])).setScale(<span class="hljs-number">2</span>,BigDecimal.ROUND_HALF_UP).doubleValue();<br>    co2 = BigDecimal.valueOf(FourChannelValConvert.getCO2(values[<span class="hljs-number">2</span>])).setScale(<span class="hljs-number">2</span>,BigDecimal.ROUND_HALF_UP).doubleValue();<br>    noise = BigDecimal.valueOf(FourChannelValConvert.getNoice(values[<span class="hljs-number">3</span>])).setScale(<span class="hljs-number">2</span>,BigDecimal.ROUND_HALF_UP).doubleValue();<br>&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="Modbus连接、获取数据与控制"><a href="#Modbus连接、获取数据与控制" class="headerlink" title="Modbus连接、获取数据与控制"></a>Modbus连接、获取数据与控制</h1><h5 id="1-新建Modbus-4150类"><a href="#1-新建Modbus-4150类" class="headerlink" title="1.新建Modbus 4150类"></a>1.新建Modbus 4150类</h5><p>通过串口服务器连接</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">modbus4150 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Modbus4150</span>(DataBusFactory.newSocketDataBus(<span class="hljs-string">&quot;192.168.1.200&quot;</span>,<span class="hljs-number">6004</span>),<span class="hljs-literal">null</span>);<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-获取modbus控制器和传感器"><a href="#2-获取modbus控制器和传感器" class="headerlink" title="2.获取modbus控制器和传感器"></a>2.获取modbus控制器和传感器</h5><p>控制器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">modbus4150.ctrlRelay(<span class="hljs-number">1</span>,<span class="hljs-literal">true</span>,<span class="hljs-literal">null</span>);<br>modbus4150.ctrlRelay(<span class="hljs-number">2</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">null</span>);<br><span class="hljs-comment">//参数：第一个：表示DO口，第二个：表示打开或关闭，第三个：表示成功后是否需要设置其他逻辑或动作（一般为空即可）</span><br><span class="hljs-comment">//方法需要抛出异常</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>电动推杆：在控制进的时候，要把退那一联设置为false。同理，控制退的时候，要把进那一联设置为false。停止的时候都设置为false</p>
+</blockquote>
+<p>传感器：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java">modbus4150.getDIVal(<span class="hljs-number">5</span>, <span class="hljs-keyword">new</span> <span class="hljs-title class_">MdBus4150SensorListener</span>() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onVal</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span> &#123;<br>        <span class="hljs-comment">//返回值0或1</span><br>        value = i;<br>        Log.d(<span class="hljs-string">&quot;test&quot;</span>,i+<span class="hljs-string">&quot;&quot;</span>);<br>    &#125;<br><br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onFail</span><span class="hljs-params">(Exception e)</span> &#123;<br><br><br>    &#125;<br>&#125;);<br><span class="hljs-comment">//传入参数：第一个：表示DI口，第二个：传感器监听器</span><br><span class="hljs-comment">//方法需要抛出异常</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="LED小条屏"><a href="#LED小条屏" class="headerlink" title="LED小条屏"></a>LED小条屏</h1><h5 id="1-创建对象"><a href="#1-创建对象" class="headerlink" title="1.创建对象"></a>1.创建对象</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">LedScreen</span> <span class="hljs-variable">ledScreen</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">LedScreen</span>(DataBusFactory.newSocketDataBus(<span class="hljs-string">&quot;192.168.1.200&quot;</span>,<span class="hljs-number">6005</span>),<span class="hljs-literal">null</span>);<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-设置文本"><a href="#2-设置文本" class="headerlink" title="2.设置文本"></a>2.设置文本</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">ledScreen.sendTxt(<span class="hljs-string">&quot;hello&quot;</span>, PlayType.LEFT, ShowSpeed.SPEED1,<span class="hljs-number">2</span>,<span class="hljs-number">100</span>,<span class="hljs-literal">null</span>);<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参数说明：</p>
+<p>txt：表示要发送的文件，</p>
+<p>PlayType.LEFT：表示向左移。支持上下左右等，对应枚举为UP,DOWN,RIGHT；</p>
+<p>ShowSpeed.SPEED3：表示速度3级播放，支持从1级到8级，对应枚举类为ShowSpeed1到8</p>
+<p>StopTime 停留时间： 3：表示停止3秒</p>
+<p>validTime 有效时间： 100：表示永不过时，小于99表示有效时间，大于99表示永久有效。</p>
+</blockquote>
+<h1 id="RFID"><a href="#RFID" class="headerlink" title="RFID"></a>RFID</h1><h5 id="1-创建对象并连接串口服务器"><a href="#1-创建对象并连接串口服务器" class="headerlink" title="1.创建对象并连接串口服务器"></a>1.创建对象并连接串口服务器</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">RFID</span> <span class="hljs-variable">rfid</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RFID</span>(DataBusFactory.newSocketDataBus(<span class="hljs-string">&quot;172.18.1.15&quot;</span>,<span class="hljs-number">6006</span>),<span class="hljs-literal">null</span>);<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-获取RFID卡号※"><a href="#2-获取RFID卡号※" class="headerlink" title="2.获取RFID卡号※"></a>2.获取RFID卡号※</h5><blockquote>
+<p>在线程里使用这个方法的时候： 如果没有读到数据，onVal()方法一直不会结束，因此需要判断是否读到数据，如果读到数据再进行下一次读取的方法。 不是在线程里使用：不需要判断。</p>
+<p>用control来控制onVal()方法</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//定义control的时候设置control默认为true</span><br><br><br><span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>) &#123;<br>        <span class="hljs-keyword">if</span>(control) &#123;<br>            control = <span class="hljs-literal">false</span>;<br>            <span class="hljs-comment">//每循环一次，先把control设置为false，停止循环</span><br>            <span class="hljs-keyword">try</span> &#123;<br>                rfid.readSingleEpc(<span class="hljs-keyword">new</span> <span class="hljs-title class_">SingleEpcListener</span>() &#123;<br>                    <span class="hljs-meta">@Override</span><br>                    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onVal</span><span class="hljs-params">(String s)</span> &#123;<br>                        <span class="hljs-comment">//返回获取到的id，String类型</span><br>                        Log.d(<span class="hljs-string">&quot;test&quot;</span>,<span class="hljs-string">&quot;onVal():&quot;</span>+s);<br>                        rfid_id = s;<br>                        <span class="hljs-keyword">if</span>(rfid_id != <span class="hljs-literal">null</span>) &#123;<br>                            control = <span class="hljs-literal">true</span>;<br>                            <span class="hljs-comment">//直到获取到的id不为空，就继续下一次循环</span><br>                        &#125;<br>                    &#125;<br><br><br>                    <span class="hljs-meta">@Override</span><br>                    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onFail</span><span class="hljs-params">(Exception e)</span> &#123;<br><br><br>                    &#125;<br>                 &#125;);<br>            &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>            &#125;<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="TextToSpeech语音播报安装与使用"><a href="#TextToSpeech语音播报安装与使用" class="headerlink" title="TextToSpeech语音播报安装与使用"></a>TextToSpeech语音播报安装与使用</h1><p>在平板上安装： 连接数据线，把 讯飞中文引擎支持.apk 移动到平板内部存储指定文件目录下 （演示时安装在DCIM文件夹中）</p>
+<h5 id="1-创建对象-1"><a href="#1-创建对象-1" class="headerlink" title="1.创建对象"></a>1.创建对象</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">TextToSpeech textToSpeech;<br>textToSpeech = <span class="hljs-keyword">new</span> <span class="hljs-title class_">TextToSpeech</span>(<span class="hljs-built_in">this</span>,<span class="hljs-literal">null</span>);<br><span class="hljs-comment">//第一个参数context上下文</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="2-发送语音"><a href="#2-发送语音" class="headerlink" title="2.发送语音"></a>2.发送语音</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java">textToSpeech.speak(<span class="hljs-string">&quot;你好&quot;</span>,TextToSpeech.QUEUE_FLUSH,<span class="hljs-literal">null</span>);<br><span class="hljs-comment">//第一个参数：文本</span><br><span class="hljs-comment">/**第二个参数：可选两种模式</span><br><span class="hljs-comment">* QUEUE_ADD</span><br><span class="hljs-comment">* Queue mode where the new entry is added at the end of the playback queue.</span><br><span class="hljs-comment">* 队列模式，其中新条目添加到播放队列的末尾。</span><br><span class="hljs-comment">*</span><br><span class="hljs-comment">* QUEUE_FLUSH</span><br><span class="hljs-comment">* Queue mode where all entries in the playback queue (media to be played and text to be synthesized) are dropped and replaced by the new entry.</span><br><span class="hljs-comment">* 队列模式，其中播放队列中的所有条目（要播放的媒体和要合成的文本）都将被删除并替换为新条目。</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="摄像头"><a href="#摄像头" class="headerlink" title="摄像头"></a>摄像头</h1><h5 id="1-创建TextureView控件"><a href="#1-创建TextureView控件" class="headerlink" title="1.创建TextureView控件"></a>1.创建TextureView控件</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;TextureView<br>    android:id=<span class="hljs-string">&quot;@+id/textureview&quot;</span><br>    android:layout_width=<span class="hljs-string">&quot;800dp&quot;</span><br>    android:layout_height=<span class="hljs-string">&quot;match_parent&quot;</span><br>    /&gt;<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-初始化"><a href="#2-初始化" class="headerlink" title="2.初始化"></a>2.初始化</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">TextureView</span> <span class="hljs-variable">textureView</span> <span class="hljs-operator">=</span> findViewById(R.id.textureview);<br><span class="hljs-type">CameraManager</span> <span class="hljs-variable">cameraManager</span> <span class="hljs-operator">=</span> CameraManager.getInstance();<br>cameraManager.setupInfo(textureView, <span class="hljs-string">&quot;admin&quot;</span>, <span class="hljs-string">&quot;admin&quot;</span>, <span class="hljs-string">&quot;172.16.1.13&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>);<br><span class="hljs-comment">//参数：第一个textureview控件，第二个用户名，第三个密码，第四个ip地址，第五个通道号(一般为1)</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="3-释放【onpPuase-】"><a href="#3-释放【onpPuase-】" class="headerlink" title="3.释放【onpPuase()】"></a>3.释放【onpPuase()】</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">cameraManager.releaseCamera();<br></code></pre></td></tr></table></figure>
+
+<h5 id="4-左右移动"><a href="#4-左右移动" class="headerlink" title="4.左右移动"></a>4.左右移动</h5><p>使用<code>controlDir(PTZ)</code>方法。参数枚举有：<code>PTZ.Up, PTZ.Down, PTZ.Left, PTZ.Right, PTZ.Stop</code> </p>
+<p>长按按钮实现上调：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java">btn_up.setOnTouchListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnTouchListener() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">onTouch</span><span class="hljs-params">(View view, MotionEvent motionEvent)</span> &#123;<br>        <span class="hljs-keyword">if</span>(motionEvent.getAction() == MotionEvent.ACTION_DOWN)&#123;<br>            cameraManager.controlDir(PTZ.Up);<br>        &#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(motionEvent.getAction() == motionEvent.ACTION_UP) &#123;<br>            cameraManager.controlDir(PTZ.Stop);<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<h5 id="5-截图"><a href="#5-截图" class="headerlink" title="5.截图"></a>5.截图</h5><p>使用<code>cameraManager.capture(String path,Stirng fileName)</code>方法，第一个是平板本地的存储路径，第二个参数是保存的文件名，可以用当前时间命名。</p>
+<p>按下截图按钮，保存图片到指定路径，并将文件名添加到数据库：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java">btn_capture.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View view)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> NowTime.NowTime() + <span class="hljs-string">&quot;.jpg&quot;</span>;<br>        cameraManager.capture(<span class="hljs-string">&quot;/storage/emulated/0/DCIM&quot;</span>, name);<br>        <span class="hljs-comment">//路径末尾 读加/，写不加/</span><br>        sqlmain.add(name);<br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><h2 id="⭐活动生命周期-多个页面切换的资源释放"><a href="#⭐活动生命周期-多个页面切换的资源释放" class="headerlink" title="⭐活动生命周期+多个页面切换的资源释放"></a>⭐活动生命周期+多个页面切换的资源释放</h2><p>一般每个app都有多个Activity视图，且每个Activity中有多个子线程，如果不进行资源释放，会导致每打开一个Activity都新增一个子线程，而旧的子线程又不能销毁，最后会使程序出错。</p>
+<h3 id="1-生命周期"><a href="#1-生命周期" class="headerlink" title="1.生命周期"></a>1.生命周期</h3><p>![1 生命活动周期与多个页面切换时的资源释放](主线-物联网竞赛\7.31\1 生命活动周期与多个页面切换时的资源释放.png)</p>
+<p><strong>主活动</strong>只需写3个方法：</p>
+<ul>
+<li>onCreate()  在此进行初始化，比如获取绑定资源文件等。这个方法只会执行一次，从其他活动跳转至主活动的时候不会再次调用。</li>
+<li>onStart()  在此进行连接网络，连接资源等，开启线程任务。跳转回主界面的时候会调用，因此每次跳转回来都会重新连接资源</li>
+<li>onPause()  在此释放资源，关闭线程任务。主界面跳转至其他界面的时候调用。</li>
+<li>（子线程）</li>
+</ul>
+<p><strong>其他活动</strong>需要写4个方法：</p>
+<ul>
+<li>onCreate()  </li>
+<li>onStart() 先连接资源 再开启线程任务</li>
+<li>onPause() 先关闭线程任务 再释放资源</li>
+<li>onStop()  finish()</li>
+<li>子线程</li>
+</ul>
+<h3 id="2-固定框架"><a href="#2-固定框架" class="headerlink" title="2.固定框架"></a>2.固定框架</h3><ol>
+<li>将主活动设置为单任务模式：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">android:launchMode=<span class="hljs-string">&quot;singleTask&quot;</span><br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>MainActivity：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">boolean</span> <span class="hljs-variable">control</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br><br><br><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;<br>    <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);<br>    setContentView(R.layout.activity_main);<br>    thread.start();<br>&#125;<br><br><br><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onStart</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">super</span>.onStart();<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 连接资源</span><br><span class="hljs-comment">     * 开启多线程任务</span><br><span class="hljs-comment">     */</span><br>    control = <span class="hljs-literal">true</span>;<br>&#125;<br><br><br><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onPause</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">super</span>.onPause();<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 关闭多线程任务</span><br><span class="hljs-comment">     * 释放资源</span><br><span class="hljs-comment">     */</span><br>    control = <span class="hljs-literal">false</span>;<br><br><br>&#125;<br><br><br><span class="hljs-type">Thread</span> <span class="hljs-variable">thread</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>   <span class="hljs-meta">@Override</span><br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>       <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>           <span class="hljs-keyword">if</span> (control) &#123;<br>               <span class="hljs-keyword">try</span> &#123;<br>                   thread.sleep(<span class="hljs-number">1000</span>);<br>                   <span class="hljs-comment">/**</span><br><span class="hljs-comment">                    * 逻辑策略</span><br><span class="hljs-comment">                    */</span><br>               &#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;<br>                   <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>               &#125;<br>           &#125;<br>       &#125;<br>   &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>其他Activity：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">boolean</span> <span class="hljs-variable">control</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br><br><br><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;<br>    <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);<br>    setContentView(R.layout.activity_main2);<br>    thread.start();<br>&#125;<br><br><br><span class="hljs-type">Thread</span> <span class="hljs-variable">thread</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)&#123;<br>            <span class="hljs-keyword">if</span>(control)&#123;<br>                <span class="hljs-keyword">try</span> &#123;<br>                    Thread.sleep(<span class="hljs-number">1000</span>);<br>                    <span class="hljs-comment">/**</span><br><span class="hljs-comment">                     * 逻辑策略</span><br><span class="hljs-comment">                     */</span><br>                &#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;<br>                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>                &#125;<br>            &#125;<br><br><br>        &#125;<br>    &#125;<br>&#125;);<br><br><br><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onStart</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">super</span>.onStart();<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 连接资源</span><br><span class="hljs-comment">     * 开启多线程</span><br><span class="hljs-comment">     */</span><br>    control = <span class="hljs-literal">true</span>;<br>&#125;<br><br><br><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onPause</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">super</span>.onPause();<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 关闭多线程</span><br><span class="hljs-comment">     * 释放资源</span><br><span class="hljs-comment">     */</span><br>    control = <span class="hljs-literal">false</span>;<br>&#125;<br><br><br><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onStop</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">super</span>.onStop();<br>    finish();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-实际流程"><a href="#3-实际流程" class="headerlink" title="3.实际流程"></a>3.实际流程</h3><p><img src="/2023/07/28/android/Users\88440\Desktop\主线-物联网竞赛\note_images\MainActivity与其他Activity之间切换.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2023/07/28/android/Users\88440\Desktop\主线-物联网竞赛\note_images\在后台销毁应用.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<hr>
+<h2 id="⭐SQLite-CRUD-listview使用"><a href="#⭐SQLite-CRUD-listview使用" class="headerlink" title="⭐SQLite CRUD+listview使用"></a>⭐SQLite CRUD+listview使用</h2><h3 id="1-SQLite"><a href="#1-SQLite" class="headerlink" title="1.SQLite"></a>1.SQLite</h3><h4 id="1-sqlite初始化"><a href="#1-sqlite初始化" class="headerlink" title="1.sqlite初始化"></a>1.sqlite初始化</h4><p>新建sql类，继承自SQLiteOpenHelper（这是一个抽象类，需要被继承之后才能被使用）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SQL</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">SQLiteOpenHelper</span> &#123;<br><br><br>    <span class="hljs-comment">//使用只传入一个Context参数的构造方法即可</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">SQL</span><span class="hljs-params">(<span class="hljs-meta">@Nullable</span> Context context)</span> &#123;<br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 创建数据库</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-built_in">super</span>(context, <span class="hljs-string">&quot;sql.db&quot;</span>, <span class="hljs-literal">null</span>, <span class="hljs-number">1</span>);<br>        <span class="hljs-comment">//创建一个名为sql.db的数据库，游标工厂为null，版本号为1</span><br>    &#125;<br><br><br>    <span class="hljs-comment">//onCreate()方法 第一次创建数据库的时候会自动调用。如果检测到已经存在数据库，则不会调用</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(SQLiteDatabase db)</span> &#123;<br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 创建一张表，包含id，时间，温度数据</span><br><span class="hljs-comment">         */</span><br>        db.execSQL(<span class="hljs-string">&quot;create table data(id int primary key autoincrement, time text, temperature text)&quot;</span>);<br>    &#125;<br><br><br>    <span class="hljs-comment">//onUpgrade()方法 数据库版本更新的时候会自动调用</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onUpgrade</span><span class="hljs-params">(SQLiteDatabase db, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> i1)</span> &#123;<br><br><br>    &#125;<br><br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>构建出SQLiteOpenHelper的继承类的实例之后，调用两个重要的方法getReadableDatabase()和getWritableDatabase()就能够创建数据库了。</p>
+<p>创建的数据库目录：<code>/data/data/&lt;程序包名&gt;/databases/</code></p>
+<h4 id="2-ContentValues"><a href="#2-ContentValues" class="headerlink" title="2.ContentValues"></a>2.ContentValues</h4><p>数据库的一行记录用ContentValues存放，类似于Map。提供put()和getAsXxx()方法存入和取出数据：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">put(String key, Xxx values)<br><span class="hljs-comment">//key为数据列的列名</span><br><br><br>getAsXxx(String key)<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-Cursor游标"><a href="#3-Cursor游标" class="headerlink" title="3.Cursor游标"></a>3.Cursor游标</h4><p>查询时，使用cursor游标进行查询。query()方法返回的也是一个Cursor对象。</p>
+<p>游标对象会指向查询结果集第一行的前面，所以要通过Cursor对象的moveToFirst()方法指向第一条记录，通过moveToNext()方法指向下一条记录，如果没有记录了，moveToNext()返回值为空，所以通常取数据时，都用循环来控制。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">while</span>(cursor.moveToNext())&#123;&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="4-CRUD-增删改查操作类"><a href="#4-CRUD-增删改查操作类" class="headerlink" title="4.CRUD 增删改查操作类"></a>4.CRUD 增删改查操作类</h4><h6 id="新建一个数据库操作类"><a href="#新建一个数据库操作类" class="headerlink" title="新建一个数据库操作类"></a>新建一个数据库操作类</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SQLexec</span>&#123;<br>    SQL sql;<br>    SQLiteDatabase db;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h6 id="新建构造方法"><a href="#新建构造方法" class="headerlink" title="新建构造方法"></a>新建构造方法</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-title function_">SQLexec</span><span class="hljs-params">(Context context)</span> &#123;<br>    <span class="hljs-built_in">this</span>.sql = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SQL</span>(context);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h6 id="Create-创建"><a href="#Create-创建" class="headerlink" title="Create 创建"></a>Create 创建</h6><p>insert()方法可以添加数据：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">long</span> <span class="hljs-title function_">insert</span><span class="hljs-params">(String table, String nullColumnHack, ContentValues values)</span> <br><span class="hljs-comment">//参数：table需要插入数据的表名，nullColumnHack可以插入null值的数据列的列名，values一行记录的数据</span><br></code></pre></td></tr></table></figure>
+
+<p>添加数据：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">add</span><span class="hljs-params">(String time)</span>&#123;<br>    <span class="hljs-comment">//获取数据库对象</span><br>    db = sql.getReadableDatabase();<br><br><br>    <span class="hljs-comment">//使用ContentValues对象来添加数据</span><br>    <span class="hljs-type">ContentValues</span> <span class="hljs-variable">values</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ContentValues</span>();<br>    values.put(<span class="hljs-string">&quot;time&quot;</span>,time);<br>    db.insert(<span class="hljs-string">&quot;data&quot;</span>,<span class="hljs-literal">null</span>,values);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h6 id="Retrieve-检索、查询"><a href="#Retrieve-检索、查询" class="headerlink" title="Retrieve 检索、查询"></a>Retrieve 检索、查询</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">Cursor <span class="hljs-title function_">query</span><span class="hljs-params">(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy)</span><br><span class="hljs-comment">//参数：第一个表名，第二个要查询出来的列名，第三个查询条件的子句，第四个用于为selection子句中占位符传入参数值，第五个groupBy用于控制分组，第六个having用于对分组进行过滤，第七个orderBy用于对记录进行排序</span><br><span class="hljs-comment">//查询结束后返回一个Curosr游标对象，查询到的数据通过游标对象取出来。</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>参数详解：</strong></p>
+<p><strong>table</strong>：表名。相当于<code>select *** from table</code>语句中的table。如果是多表联合查询，可以用逗号将两个表名分开。 </p>
+<p><strong>columns</strong>：要查询出来的列名。相当于<code>select *** from table</code>语句中的 ***部分。如果是查询多个参数，可以用字符串数组列举。例：<code>new String[]&#123;&quot;name&quot;,&quot;age&quot;,&quot;sex&quot;&#125;</code> </p>
+<p><strong>selection</strong>：查询条件子句，相当于<code>select *** from table where &amp;&amp;</code>语句中的<code>&amp;&amp;</code>部分，在条件子句允许使用占位符“?”表示条件值 ，例：<code>&quot;name=?,age=?,sex=?&quot;</code></p>
+<p><strong>selectionArgs</strong>：对应于selection参数占位符的值，值在数组中的位置与占位符在语句中的位置必须一致，否则就会有异常。 例：与<code>new String[]&#123;&quot;lisa&quot;,&quot;1&quot;,&quot;女&quot;&#125;</code></p>
+<p><strong>groupBy</strong>：相当于<code>select *** from table where &amp;&amp; group by ...</code>语句中…的部分 ，作用是：将同一列的相同名字的参数合并在一起。例：在name列有两个Jame（name:Jame –salay:100，name:Jame –salay:200）,使用…group by name查询后 只显示一个Jame的集合（name:Jame–salay:300）</p>
+<p><strong>having</strong>：相当于<code>select *** from table where &amp;&amp; group by ...having %%%</code>语句中%%%的部分， 作用于groupBy的条件，例：havig name&gt;2意思是name列相同参数&gt;2</p>
+<p><strong>orderBy</strong>：相当于<code>select *** from ?? where &amp;&amp; group by ... having %%% order by@@</code>语句中的@@部分，如：personid desc（按person 降序）, age asc（按age升序）</p>
+<p><strong>limit</strong>：指定偏移量和获取的记录数，相当于select语句limit关键字后面的部分。</p>
+<p>查询所有数据：</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs processing">@<span class="hljs-title function_">SuppressLint</span>(<span class="hljs-string">&quot;Range&quot;</span>)<br><span class="hljs-keyword">public</span> <span class="hljs-built_in">ArrayList</span>&lt;Map&gt; <span class="hljs-title function_">query</span>( ) &#123;<br>    db = sql.<span class="hljs-property">getReadableDatabase</span>();<br>    <span class="hljs-comment">//cursor查询的是所有数据，不加任何条件</span><br>    Cursor <span class="hljs-built_in">cursor</span> = db.<span class="hljs-property">query</span>(<span class="hljs-string">&quot;data&quot;</span>,<span class="hljs-literal">null</span>,<span class="hljs-literal">null</span>,<span class="hljs-literal">null</span>,<span class="hljs-literal">null</span>,<span class="hljs-literal">null</span>,<span class="hljs-literal">null</span>);<br>    <span class="hljs-built_in">ArrayList</span>&lt;Map&gt; arrayList = <span class="hljs-keyword">new </span><span class="hljs-class title_">ArrayList</span>();<br>    Map <span class="hljs-built_in">map</span>;<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getColumnCount</span>() != <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-comment">//如果表中有数据，就开始查询</span><br>        <br>        <span class="hljs-comment">//循环到最后一个有数据的游标位置为止</span><br>        <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">moveToNext</span>()) &#123;<br>            <span class="hljs-comment">//每次要更新新的map</span><br>            <span class="hljs-built_in">map</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">HashMap</span>&lt;&gt;();<br>            Log.<span class="hljs-property">d</span>(<span class="hljs-string">&quot;test&quot;</span>,<span class="hljs-string">&quot;query: id = &quot;</span> + <span class="hljs-built_in">cursor</span>.<span class="hljs-property">getInt</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getColumnIndex</span>(<span class="hljs-string">&quot;id&quot;</span>)) + <span class="hljs-string">&quot;time = &quot;</span> +<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getString</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getColumnIndex</span>(<span class="hljs-string">&quot;time&quot;</span>)));<br>            <span class="hljs-type">int</span> id = <span class="hljs-built_in">cursor</span>.<span class="hljs-property">getInt</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getColumnIndex</span>(<span class="hljs-string">&quot;id&quot;</span>));<br>            <span class="hljs-built_in">map</span>.<span class="hljs-property">put</span>(<span class="hljs-string">&quot;id&quot;</span>,<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getInt</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getColumnIndex</span>(<span class="hljs-string">&quot;id&quot;</span>)));<br>            <span class="hljs-built_in">map</span>.<span class="hljs-property">put</span>(<span class="hljs-string">&quot;time&quot;</span>,<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getString</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getColumnIndex</span>(<span class="hljs-string">&quot;time&quot;</span>)));<br>            arrayList.<span class="hljs-property">add</span>(<span class="hljs-built_in">map</span>);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> arrayList;<br>&#125;<br><span class="hljs-comment">//返回的是包含查询到的记录的ArrayList</span><br></code></pre></td></tr></table></figure>
+
+<p>按id查询数据：</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs processing">@<span class="hljs-title function_">SuppressLint</span>(<span class="hljs-string">&quot;Range&quot;</span>)<br><span class="hljs-keyword">public</span> <span class="hljs-built_in">ArrayList</span>&lt;Map&gt; <span class="hljs-title function_">query</span>(<span class="hljs-type">int</span> id) &#123;<br>    db = sql.<span class="hljs-property">getReadableDatabase</span>();<br>    <span class="hljs-comment">//cursor加上id的条件</span><br>    Cursor <span class="hljs-built_in">cursor</span> = db.<span class="hljs-property">query</span>(<span class="hljs-string">&quot;data&quot;</span>,<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;id = ?&quot;</span>,<span class="hljs-keyword">new </span><span class="hljs-class title_">String</span>[]&#123;id+<span class="hljs-string">&quot;&quot;</span>&#125;,<span class="hljs-literal">null</span>,<span class="hljs-literal">null</span>,<span class="hljs-literal">null</span>);<br>    <span class="hljs-built_in">ArrayList</span>&lt;Map&gt; arrayList = <span class="hljs-keyword">new </span><span class="hljs-class title_">ArrayList</span>&lt;&gt;();<br>    Map <span class="hljs-built_in">map</span>;<br>    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">moveToNext</span>()) &#123;<br>        <span class="hljs-built_in">map</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">HashMap</span>();<br>        Log.<span class="hljs-property">d</span>(<span class="hljs-string">&quot;test&quot;</span>, <span class="hljs-string">&quot;query: id = &quot;</span> + <span class="hljs-built_in">cursor</span>.<span class="hljs-property">getString</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getColumnIndex</span>(<span class="hljs-string">&quot;id&quot;</span>))+<span class="hljs-string">&quot;time = &quot;</span>+<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getColumnIndex</span>(<span class="hljs-string">&quot;time&quot;</span>));<br>        <span class="hljs-built_in">map</span>.<span class="hljs-property">put</span>(<span class="hljs-string">&quot;id&quot;</span>,<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getString</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getColumnIndex</span>(<span class="hljs-string">&quot;id&quot;</span>)));<br>        <span class="hljs-built_in">map</span>.<span class="hljs-property">put</span>(<span class="hljs-string">&quot;time&quot;</span>,<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getString</span>(<span class="hljs-built_in">cursor</span>.<span class="hljs-property">getColumnIndex</span>(<span class="hljs-string">&quot;time&quot;</span>)));<br>        arrayList.<span class="hljs-property">add</span>(<span class="hljs-built_in">map</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> arrayList;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h6 id="Update-更新、修改"><a href="#Update-更新、修改" class="headerlink" title="Update 更新、修改"></a>Update 更新、修改</h6><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs n1ql"><span class="hljs-keyword">update</span>(<span class="hljs-keyword">String</span> table, ContentValues <span class="hljs-keyword">values</span>, <span class="hljs-keyword">String</span> whereClause, <span class="hljs-keyword">String</span>[] whereArgs)<br>//参数：第一个表名，第二个ContentValues，第三个whereClause，满足whereClause子句的记录将会被删除，第四个占位符传值，用于为子句传入数据<br></code></pre></td></tr></table></figure>
+
+<p>根据id更新某条数据：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-built_in">public</span> <span class="hljs-type">void</span> updata(<span class="hljs-type">int</span> id,String <span class="hljs-type">time</span>,<span class="hljs-type">double</span> temperature) &#123;<br>    db = <span class="hljs-keyword">sql</span>.getReadableDatabase();<br>    ContentValues contentValues = <span class="hljs-built_in">new</span> ContentValues();<br>    contentValues.put(&quot;time&quot;,<span class="hljs-type">time</span>);fvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv<br>    contentValues.put(&quot;temperature&quot;,temperature);<br>    db.<span class="hljs-keyword">update</span>(&quot;data&quot;,contentValues,&quot;id = ?&quot;,<span class="hljs-built_in">new</span> String[] &#123;id+&quot;&quot;&#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h6 id="Delete-删除"><a href="#Delete-删除" class="headerlink" title="Delete 删除"></a>Delete 删除</h6><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs n1ql"><span class="hljs-keyword">delete</span>(<span class="hljs-keyword">String</span> table, <span class="hljs-keyword">String</span> whereClause, <span class="hljs-keyword">String</span>[] whereArgs)<br>//参数：第一个表名，第二个<span class="hljs-keyword">where</span>，满足<span class="hljs-keyword">where</span>子句的记录将会被删除，第三个占位符传值，用于为子句传入数据<br></code></pre></td></tr></table></figure>
+
+<p>删除表中所有数据：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-built_in">public</span> <span class="hljs-type">void</span> <span class="hljs-keyword">delete</span>() &#123;<br>    db = <span class="hljs-keyword">sql</span>.getReadableDatabase();<br>    db.<span class="hljs-keyword">delete</span>(&quot;data&quot;,<span class="hljs-keyword">null</span>,<span class="hljs-keyword">null</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>按id删除某条数据：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-built_in">public</span> <span class="hljs-type">void</span> <span class="hljs-keyword">delete</span>(<span class="hljs-type">int</span> id) &#123;<br>    db = <span class="hljs-keyword">sql</span>.getReadableDatabase();<br>    db.<span class="hljs-keyword">delete</span>(&quot;data&quot;.&quot;id = ?&quot;, <span class="hljs-built_in">new</span> String[] &#123;id+&quot;&quot;&#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="5-其他注意事项"><a href="#5-其他注意事项" class="headerlink" title="5.其他注意事项"></a>5.其他注意事项</h4><p>如果需要更改表名，需要删除原来的数据库文件，或者手动卸载应用之后，再部署新的应用在手机上。</p>
+<h4 id="6-使用及实例化"><a href="#6-使用及实例化" class="headerlink" title="6.使用及实例化"></a>6.使用及实例化</h4><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe">SQLite sqlite = <span class="hljs-keyword">new</span> <span class="hljs-type">SQLite</span>(MainActivity.<span class="hljs-built_in">this</span>);<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-ListView"><a href="#2-ListView" class="headerlink" title="2.ListView"></a>2.ListView</h3><h4 id="1-新建单项的xml"><a href="#1-新建单项的xml" class="headerlink" title="1.新建单项的xml"></a>1.新建单项的xml</h4><p>和正常页面视图一样创建即可。格式是每一项的格式。</p>
+<h4 id="2-在页面上添加ListView控件"><a href="#2-在页面上添加ListView控件" class="headerlink" title="2.在页面上添加ListView控件"></a>2.在页面上添加ListView控件</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;ListView<br>    android:<span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;@+id/listview&quot;</span><br>    android:<span class="hljs-attribute">layout_width</span>=<span class="hljs-string">&quot;900dp&quot;</span><br>    android:<span class="hljs-attribute">layout_height</span>=<span class="hljs-string">&quot;600dp&quot;</span> /&gt;<br></code></pre></td></tr></table></figure>
+
+<p>宽高是整个ListView区域的宽高，如果数据超过了设置的区域，可以拖动查看。</p>
+<h4 id="3-自定义适配器"><a href="#3-自定义适配器" class="headerlink" title="3.自定义适配器"></a>3.自定义适配器</h4><p>自定义的适配器类继承自BaseAdapter类</p>
+<p>需要实现五个方法：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ListViewAdapter</span> <span class="hljs-title">extends</span> <span class="hljs-title">BaseAdapter</span>&#123;<br><br><br>    ArrayList&lt;Map&gt; arrayList;<br>    LayoutInflater inflater;<br><br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 构造方法</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> arrayList</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> context</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> BaseList(ArrayList&lt;Map&gt; arrayList, Context context) &#123;<br>        <span class="hljs-keyword">this</span>.arrayList = arrayList;<br>        <span class="hljs-comment">//传入从SQLmain.query()方法中获取到的ArrayList&lt;Map&gt;</span><br>        inflater = LayoutInflater.from(context);<br>    &#125;<br><br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 继承父类后需要重写的四个方法</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> int getCount() &#123;<br>        <span class="hljs-keyword">return</span> arrayList.size();<br>    &#125;<br>    <span class="hljs-comment">//首先 getCount() 获取Item 的个数</span><br>    <span class="hljs-comment">//一定要修改这个方法，否则ListView不知道有多少项，就不会显示</span><br><br><br>    <span class="hljs-comment">//getItem() getItemId() 调用ListView 的响应的方法的时候调用到。可以不修改</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Object getItem(int i) &#123;<br>        <span class="hljs-keyword">return</span> arrayList.<span class="hljs-keyword">get</span>(i);<br>    &#125;<br><br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> long getItemId(int i) &#123;<br>        <span class="hljs-keyword">return</span> i;<br>    &#125;<br><br><br>    <span class="hljs-comment">//每绘制一次就调用一次getView() 方法，在getView 中将事先定义好的layout布局确定显示的效果并返回一个View对象作为一个Item 显示出来。</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> View getView(int i, View view, ViewGroup viewGroup) &#123;<br>        Data <span class="hljs-keyword">data</span>;<br>        <span class="hljs-comment">//如果没有这一项的视图，就创建，没有就直接setTag</span><br>        <span class="hljs-keyword">if</span>(view == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-comment">//加载布局为一个视图</span><br>            <span class="hljs-keyword">data</span> = new Data();<br>            view = inflater.inflate(R.layout.data_item,<span class="hljs-literal">null</span>);<span class="hljs-comment">//这里的布局是单项的布局</span><br>            <span class="hljs-comment">//在view 视图中查找 组件</span><br>            <span class="hljs-keyword">data</span>.textview_id = view.findViewById(R.id.tv_id);<br>            <span class="hljs-keyword">data</span>.textview_time = view.findViewById(R.id.tv_time);<br>            view.setTag(<span class="hljs-keyword">data</span>);<br>        &#125;<br>        <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">data</span> = (Data) view.getTag();<br>        &#125;<br><br><br>        <span class="hljs-comment">//为Item 里面的组件设置相应的数据</span><br>        Map map = arrayList.<span class="hljs-keyword">get</span>(i);<br>        <span class="hljs-keyword">data</span>.textview_id.setText(map.<span class="hljs-keyword">get</span>(<span class="hljs-string">&quot;id&quot;</span>)+<span class="hljs-string">&quot;&quot;</span>);<br>        <span class="hljs-keyword">data</span>.textview_time.setText((String) map.<span class="hljs-keyword">get</span>(<span class="hljs-string">&quot;time&quot;</span>));<br><br><br>        <span class="hljs-comment">//返回含有数据的view</span><br>        <span class="hljs-keyword">return</span> view;<br>    &#125;<br><br><br>    <span class="hljs-comment">//在点击事件里直接调用这个方法，把arraylist赋值给适配器对象（刷新时用）</span><br>    <span class="hljs-keyword">public</span> void refresh(ArrayList&lt;Map&gt; arrayList) &#123;<br>        <span class="hljs-keyword">this</span>.arrayList = arrayList;<br>        <span class="hljs-keyword">this</span>.notifyDataSetChanged();<br>     &#125;<br><br><br>    <span class="hljs-comment">//自定义的内部类</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Data</span> &#123;<br>        TextView textview_id;<br>        TextView textview_time;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="4-实例化适配器类，设置适配器"><a href="#4-实例化适配器类，设置适配器" class="headerlink" title="4.实例化适配器类，设置适配器"></a>4.实例化适配器类，设置适配器</h4><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">LsitView listView = find<span class="hljs-constructor">ViewById(R.<span class="hljs-params">id</span>.<span class="hljs-params">listview</span>)</span>;<br>ListViewAdapter listViewAdapter = <span class="hljs-keyword">new</span> <span class="hljs-constructor">ListViewAdapter(<span class="hljs-params">sqlMain</span>.<span class="hljs-params">query</span>()</span>,this);<br><span class="hljs-comment">//给listview设置适配器</span><br>listView.set<span class="hljs-constructor">Adapter(<span class="hljs-params">listViewAdapter</span>)</span>;<br></code></pre></td></tr></table></figure>
+
+<h4 id="5-调用适配器类方法"><a href="#5-调用适配器类方法" class="headerlink" title="5.调用适配器类方法"></a>5.调用适配器类方法</h4><p>在三个按钮的点击事件中添加这行：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-comment">//刷新listview视图（数据库内容有变的时候调用）</span><br>listViewAdapter.<span class="hljs-built_in">ref</span>resh(sqlMain.query());<br></code></pre></td></tr></table></figure>
+
+<h1 id="常用SQL语句"><a href="#常用SQL语句" class="headerlink" title="常用SQL语句"></a>常用SQL语句</h1><h2 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> data(id <span class="hljs-type">int</span> <span class="hljs-keyword">primary key</span> autoincrement, <span class="hljs-type">time</span> <span class="hljs-type">text</span>, temperature <span class="hljs-type">text</span>)<br></code></pre></td></tr></table></figure>
+
+<p>创建一张名为data的表。包含三个字段，id（int型），time，temperature（text型）</p>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">select</span> temperature <span class="hljs-keyword">from</span> data <span class="hljs-keyword">where</span> id = <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> id = <span class="hljs-number">33</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-type">time</span> <span class="hljs-keyword">desc</span><br></code></pre></td></tr></table></figure>
+
+<p>将data表中id为1或33的temp数据，通过time倒序排列</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">select</span> temperature from data where time =&lt; <span class="hljs-number">2023</span>-<span class="hljs-number">8</span>-<span class="hljs-number">7</span> <span class="hljs-number">13</span>:<span class="hljs-number">20</span>:<span class="hljs-number">05</span> and time &gt;= <span class="hljs-number">2023</span>-<span class="hljs-number">8</span>-<span class="hljs-number">7</span> <span class="hljs-number">13</span>:<span class="hljs-number">20</span>:<span class="hljs-number">05</span>  order by time desc<br></code></pre></td></tr></table></figure>
+
+<p>将data表中time从aaa到bbb时间段内所有的temp数据，按time倒序排列</p>
+<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><h3 id="保留两位小数"><a href="#保留两位小数" class="headerlink" title="保留两位小数"></a>保留两位小数</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">double temp = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BigDecimal</span>.</span></span>value<span class="hljs-constructor">Of(2.837584953)</span>.set<span class="hljs-constructor">Scale(2, BigDecimal.ROUND_HALF_UP)</span>.double<span class="hljs-constructor">Value()</span>;<br><span class="hljs-comment">//setScale(保留几位小数, 取整方式)</span><br><span class="hljs-comment">//BigDecimal.ROUND_HALF_UP 向上取整</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="数字类型转字符串类型"><a href="#数字类型转字符串类型" class="headerlink" title="数字类型转字符串类型"></a>数字类型转字符串类型</h3><p>加<code>+&quot;&quot;</code>即可</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">tv_temp.set<span class="hljs-constructor">Text(<span class="hljs-params">temp</span>+<span class="hljs-string">&quot;&quot;</span>)</span>;<br></code></pre></td></tr></table></figure>
+
+<h3 id="自定义时间格式类"><a href="#自定义时间格式类" class="headerlink" title="自定义时间格式类"></a>自定义时间格式类</h3><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NowTime</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> SimpleDateFormat simpleDateFormat = <span class="hljs-keyword">new</span> <span class="hljs-type">SimpleDateFormat</span>(<span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);<br>    <span class="hljs-comment">//新建时间格式实例，yyyy表示完整的年份，MM表示月份，dd表示日期，HH表示24小时制小时，hh表示12小时制，mm表示分钟，ss表示秒数</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">String</span> NowTime()&#123;<br>        simpleDateFormat.setTimeZone(TimeZone.getTimeZone(<span class="hljs-string">&quot;GMT+8&quot;</span>));<br>        <span class="hljs-comment">//修改时区信息（东八区）</span><br>        <span class="hljs-keyword">return</span> simpleDateFormat.format(<span class="hljs-keyword">new</span> <span class="hljs-type">Date</span>());<br>        <span class="hljs-comment">//Date()可以获得时间值，但是不一定是中国的时区。</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>调用NowTime.NowTime()方法，就可以获得自定义格式的时间（String类型）</p>
+<h1 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h1><h2 id="⭐子线程"><a href="#⭐子线程" class="headerlink" title="⭐子线程"></a>⭐子线程</h2><p>两种写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Thread</span> <span class="hljs-variable">thread</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">         * while(true)&#123;&#125;</span><br><span class="hljs-comment">         * 无限循环</span><br><span class="hljs-comment">         */</span><br>    &#125;<br>&#125;);<br>                           <br><span class="hljs-comment">//写在onCreate()等方法外面</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="1-定时器"><a href="#1-定时器" class="headerlink" title="1.定时器"></a>1.定时器</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">Thread.sleep(<span class="hljs-number">1000</span>);<br><span class="hljs-regexp">//</span><span class="hljs-number">1000</span>为<span class="hljs-number">1</span>秒，<span class="hljs-number">100</span>为<span class="hljs-number">0.1</span>秒<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-控制开关"><a href="#2-控制开关" class="headerlink" title="2.控制开关"></a>2.控制开关</h5><p>在<code>while(true)&#123;&#125;</code>中添加一个boolean变量，默认为false：</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">boolean control <span class="hljs-operator">=</span> false<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<p>只有在需要开启的时候再将control设置为true，再开启线程<code>thread.start();</code></p>
+<h5 id="3-开启与关闭"><a href="#3-开启与关闭" class="headerlink" title="3.开启与关闭"></a>3.开启与关闭</h5><p>子线程开启的位置选择很关键：比如循环获取zigbee数据之前，要确保zigbee建立了连接，所以应该在建立连接成功的判断分支里开启子线程。</p>
+<hr>
+<h2 id="⭐委托机制更改ui"><a href="#⭐委托机制更改ui" class="headerlink" title="⭐委托机制更改ui"></a>⭐委托机制更改ui</h2><p>子线程中不能直接更改ui，如果需要修改，需要借助委托机制，在委托机制中修改。</p>
+<h6 id="1-创建Handler对象"><a href="#1-创建Handler对象" class="headerlink" title="1.创建Handler对象"></a>1.创建Handler对象</h6><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs aspectj">Handler <span class="hljs-keyword">handler</span> = <span class="hljs-keyword">new</span> Handler(<span class="hljs-keyword">new</span> Handler.Callback() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">handleMessage</span><span class="hljs-params">(@NonNull Message message)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(message.what == <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-comment">/*</span><br><span class="hljs-comment">            修改ui</span><br><span class="hljs-comment">            tv_temp.setText(&quot;温度：&quot; + temp + &quot;℃&quot;);</span><br><span class="hljs-comment">            tv_hum.setText(&quot;湿度：&quot; + hum);</span><br><span class="hljs-comment">            */</span><br>        &#125;<span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span><span class="hljs-params">(message.what == <span class="hljs-number">2</span>)</span></span>&#123;<br>            <br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<h6 id="2-启动委托机制"><a href="#2-启动委托机制" class="headerlink" title="2.启动委托机制"></a>2.启动委托机制</h6><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs abnf">//发送委托信息，显示温湿度<br>Message msg <span class="hljs-operator">=</span> new Message()<span class="hljs-comment">;</span><br>msg.what <span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-comment">;</span><br>handler.sendMessage(msg)<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><h3 id="1-开灯关灯"><a href="#1-开灯关灯" class="headerlink" title="1.开灯关灯"></a>1.开灯关灯</h3><h5 id="1-设置监听器"><a href="#1-设置监听器" class="headerlink" title="1.设置监听器"></a>1.设置监听器</h5><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">tb_lamp.set<span class="hljs-constructor">OnCheckedChangeListener(<span class="hljs-params">new</span> CompoundButton.OnCheckedChangeListener()</span> &#123;<br>    @Override<br>    public void on<span class="hljs-constructor">CheckedChanged(CompoundButton <span class="hljs-params">compoundButton</span>, <span class="hljs-params">boolean</span> <span class="hljs-params">b</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span>(b) &#123;<br>            iv_lamp.set<span class="hljs-constructor">BackgroundResource(R.<span class="hljs-params">mipmap</span>.<span class="hljs-params">lamp_on</span>)</span>;<br>        &#125;<br>        <span class="hljs-keyword">else</span> &#123;<br>            iv_lamp.set<span class="hljs-constructor">BackgroundResource(R.<span class="hljs-params">mipmap</span>.<span class="hljs-params">lamp_off</span>)</span>;<br>        &#125;<br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-布局"><a href="#2-布局" class="headerlink" title="2.布局"></a>2.布局</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;ToggleButton<br>    android:<span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;@+id/tb_lamp&quot;</span><br>    android:<span class="hljs-attribute">layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span><br>    android:<span class="hljs-attribute">layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span><br>    android:<span class="hljs-attribute">textOff</span>=<span class="hljs-string">&quot;打开灯泡&quot;</span><br>    android:<span class="hljs-attribute">textOn</span>=<span class="hljs-string">&quot;关闭灯泡&quot;</span>/&gt;<br><br><br>&lt;ImageView<br>    android:<span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;@+id/iv_lamp&quot;</span><br>    android:<span class="hljs-attribute">layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span><br>    android:<span class="hljs-attribute">layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>/&gt;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-帧动画"><a href="#2-帧动画" class="headerlink" title="2.帧动画"></a>2.帧动画</h3><h5 id="1-新建AnimationDrawable对象"><a href="#1-新建AnimationDrawable对象" class="headerlink" title="1.新建AnimationDrawable对象"></a>1.新建AnimationDrawable对象</h5><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf">AnimationDrawable animationDrawable <span class="hljs-operator">=</span> (AnimationDrawable) iv_fan.getBackground()<span class="hljs-comment">;</span><br>//每次使用一个新的帧动画都需要新建一个AnimationDrawable对象<br></code></pre></td></tr></table></figure>
+
+<h5 id="2-设置监听器"><a href="#2-设置监听器" class="headerlink" title="2.设置监听器"></a>2.设置监听器</h5><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs typescript">tb_fan.<span class="hljs-title function_">setOnCheckedChangeListener</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CompoundButton</span>.<span class="hljs-title class_">OnCheckedChangeListener</span>() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-title function_">onCheckedChanged</span>(<span class="hljs-params">CompoundButton compoundButton, <span class="hljs-built_in">boolean</span> b</span>) &#123;<br>        <span class="hljs-keyword">if</span>(b) &#123;<br>            animationDrawable.<span class="hljs-title function_">start</span>();<br>            <span class="hljs-comment">//使用animationDrawable时layout文件中设置background属性，不要设置src属性覆盖，如果没有background会有空指针异常</span><br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            animationDrawable.<span class="hljs-title function_">stop</span>();<br>        &#125;<br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-动画文件"><a href="#3-动画文件" class="headerlink" title="3.动画文件"></a>3.动画文件</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">animation-list</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:oneshot</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/pic_cartoon_fan_1&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;80&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/pic_cartoon_fan_2&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;80&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/pic_cartoon_fan_3&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;80&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/pic_cartoon_fan_4&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;80&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/pic_cartoon_fan_5&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;80&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">animation-list</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="4-控件"><a href="#4-控件" class="headerlink" title="4.控件"></a>4.控件</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;ImageView<br>    android:<span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;@+id/iv_fan&quot;</span><br>    android:<span class="hljs-attribute">layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span><br>    android:<span class="hljs-attribute">layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span><br>    android:<span class="hljs-attribute">background</span>=<span class="hljs-string">&quot;@drawable/fan&quot;</span> /&gt;<br></code></pre></td></tr></table></figure>
+
+<p>用动画作为background属性</p>
+<h3 id="3-设置控件是否可见"><a href="#3-设置控件是否可见" class="headerlink" title="3.设置控件是否可见"></a>3.设置控件是否可见</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">iv_open.setVisibility(View.INVISIBLE);  <span class="hljs-regexp">//</span>不可见<br>iv_close.setVisibility(View.VISIBLE);   <span class="hljs-regexp">//</span>可见<br></code></pre></td></tr></table></figure>
+
+<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><h3 id="1-ToggleButton"><a href="#1-ToggleButton" class="headerlink" title="1.ToggleButton"></a>1.ToggleButton</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;ToggleButton<br>    android:<span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;@+id/tb_lamp&quot;</span><br>    android:<span class="hljs-attribute">layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span><br>    android:<span class="hljs-attribute">layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span><br>    android:<span class="hljs-attribute">textOff</span>=<span class="hljs-string">&quot;打开灯泡&quot;</span><br>    android:<span class="hljs-attribute">textOn</span>=<span class="hljs-string">&quot;关闭灯泡&quot;</span>/&gt;<br></code></pre></td></tr></table></figure>
+
+<p>ToggleButton的监听器方法名称为 setOnCheckedChangeListener()</p>
+<hr>
+<h3 id="2-帧动画的布局"><a href="#2-帧动画的布局" class="headerlink" title="2.帧动画的布局"></a>2.帧动画的布局</h3><h6 id="1-animation-list"><a href="#1-animation-list" class="headerlink" title="1.animation-list"></a>1.animation-list</h6><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">animation-list</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:oneshot</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/pic_cartoon_fan_1&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;80&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/pic_cartoon_fan_2&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;80&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/pic_cartoon_fan_3&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;80&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/pic_cartoon_fan_4&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;80&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/pic_cartoon_fan_5&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;80&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">animation-list</span>&gt;</span><br><br><br><span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">oneshot  false-&gt;循环播放帧动画  true-&gt;只播放一遍</span><br><span class="hljs-comment">duration表示时间间隔</span><br><span class="hljs-comment">--&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h6 id="2-imageview"><a href="#2-imageview" class="headerlink" title="2.imageview"></a>2.imageview</h6><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;ImageView<br>    android:<span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;@+id/iv_fan&quot;</span><br>    android:<span class="hljs-attribute">layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span><br>    android:<span class="hljs-attribute">layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span><br>    android:<span class="hljs-attribute">background</span>=<span class="hljs-string">&quot;@drawable/fan&quot;</span>/&gt;<br></code></pre></td></tr></table></figure>
+
+<p>不用设置src，会覆盖掉动画。设置background为动画布局即可。不设置会出现空指针异常。</p>
+<hr>
+<h3 id="3-自定义背景样式"><a href="#3-自定义背景样式" class="headerlink" title="3. 自定义背景样式"></a>3. 自定义背景样式</h3><p>使用selector标签-&gt;item-&gt;shape</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">selector</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">shape</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">solid</span> <span class="hljs-attr">android:color</span>=<span class="hljs-string">&quot;#fff&quot;</span>/&gt;</span><br>            <span class="hljs-comment">&lt;!--填充背景颜色--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">stroke</span> <span class="hljs-attr">android:color</span>=<span class="hljs-string">&quot;#000&quot;</span> <span class="hljs-attr">android:width</span>=<span class="hljs-string">&quot;2dp&quot;</span>/&gt;</span><br>            <span class="hljs-comment">&lt;!--边框颜色--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">corners</span> <span class="hljs-attr">android:radius</span>=<span class="hljs-string">&quot;5dp&quot;</span>/&gt;</span><br>            <span class="hljs-comment">&lt;!--设置圆角--&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">shape</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">selector</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>整个文件在drawable文件夹里，需要使用这个自定义样式的控件将android:background&#x3D;””属性设置为引用这个文件即可。</p>
+<hr>
+<h3 id="4-Image读取本地图片"><a href="#4-Image读取本地图片" class="headerlink" title="4.Image读取本地图片"></a>4.Image读取本地图片</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">imageView.set<span class="hljs-constructor">ImageURI(Uri.<span class="hljs-params">fromFile</span>(<span class="hljs-params">new</span> File(<span class="hljs-string">&quot;/sdcard/DCIM/&quot;</span>+<span class="hljs-params">map</span>.<span class="hljs-params">get</span>(<span class="hljs-string">&quot;file&quot;</span>)</span>)));<br></code></pre></td></tr></table></figure>
+
+<p>File()内的路径是拼凑的，前半部分的路径之后一定要记得加&#x2F;</p>
+<hr>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Android/" class="print-no-link">#Android</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>安卓笔记</div>
+      <div>https://zjingrong.xyz/2023/07/28/android/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Jingrong Zeng</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月28日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/25/hexo+github/" title="手把手教你使用Hexo+GitHub搭建个人博客并发布文章（附常见问题解决方法）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">手把手教你使用Hexo+GitHub搭建个人博客并发布文章（附常见问题解决方法）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
