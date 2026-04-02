@@ -27,10 +27,10 @@
 <meta property="og:description" content="准备工作 1月21-29日：    卸载mysql8.0+版本，重装mysql5.7 安装idea专业版破解版本，构建maven 导入数据库语句 安装SQL Server 利用通义灵码，修改版本不兼容导致的语法编译问题，运行项目    2月17日：安装cursor，安装git连接github。 2月24日：cursor免费额度用完，选择trae国际版使用，使用Gemini-3-Flash-Prev">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-17T08:55:07.000Z">
-<meta property="article:modified_time" content="2026-02-24T09:38:06.579Z">
+<meta property="article:modified_time" content="2026-04-02T01:53:15.880Z">
 <meta property="article:author" content="贰蓉">
 <meta property="article:tag" content="AI">
-<meta property="article:tag" content="毕业设计">
+<meta property="article:tag" content="毕设论文">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.4k 字
+          7.2k 字
         
       </span>
     
@@ -246,7 +246,7 @@
         
         
         
-          45 分钟
+          61 分钟
         
       </span>
     
@@ -303,6 +303,8 @@
 <ul>
 <li>2月17日：安装cursor，安装git连接github。</li>
 <li>2月24日：cursor免费额度用完，选择trae国际版使用，使用Gemini-3-Flash-Preview模型（免费）。利用finance（购买版）的文件夹结构补充代码，可以免去重新安装配置环境的繁琐。配合git进行版本管理。</li>
+<li>2月25日：trae国际版免费额度用完，免费试用专业版14天，使用GPT-5.2模型。已经更新到基本功能符合开题报告的版本，仍需要继续完善补充小问题。</li>
+<li>4月1日：将application.yml配置添加<code>address:0.0.0.0</code>监听所有网络接口，允许外部访问，<code>port:8081</code>端口不变。<code>ipconfig</code>命令查看ip地址，关闭防火墙后可以在同一局域网下不同设备访问<code>http://ip地址:8081/</code>，进行<strong>协同</strong>（同步）功能的测试了。记得完成之后重新开启防火墙保证安全。</li>
 </ul>
 <h4 id="vibe-coding学习"><a href="#vibe-coding学习" class="headerlink" title="vibe coding学习"></a>vibe coding学习</h4><h5 id="Cursor模型上下文"><a href="#Cursor模型上下文" class="headerlink" title="Cursor模型上下文"></a>Cursor模型上下文</h5><h6 id="智能项目分析"><a href="#智能项目分析" class="headerlink" title="智能项目分析"></a>智能项目分析</h6><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs gherkin"><span class="hljs-comment"># 一次性理解完整项目</span><br><span class="hljs-meta">@整个项目文件夹</span><br><span class="hljs-meta">@技术设计文档.md</span><br><span class="hljs-meta">@API文档.md</span><br><span class="hljs-meta">@错误日志.txt</span><br><br><span class="hljs-comment"># 提问：分析项目架构瓶颈并提出优化方案</span><br><span class="hljs-comment"># AI可以基于所有材料给出综合建议</span><br></code></pre></td></tr></table></figure>
 
@@ -328,6 +330,14 @@
 </ul>
 <h6 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h6><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-number">1.</span>开始新项目时<br><span class="hljs-comment">@整个项目代码</span><br><span class="hljs-comment">“请理解我的项目结构”</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">2.开发过程中</span><br><span class="hljs-comment">@</span>相关文件 + 最近修改<br>“基于这些代码，实现...”<br><br><span class="hljs-number">3.</span>定期清理<br>/<span class="hljs-keyword">clear</span>   <span class="hljs-meta">#重置上下文但保留知识</span><br>/<span class="hljs-keyword">new</span>     <span class="hljs-meta">#全新会话</span><br></code></pre></td></tr></table></figure>
 
+<h4 id="开题报告内容"><a href="#开题报告内容" class="headerlink" title="开题报告内容"></a>开题报告内容</h4><blockquote>
+<p>研究的基本内容：</p>
+<p>在家庭财务协同管理系统的设计与实现过程中，将深入研究系统各项功能模块，以满足现代家庭对财务管理系统的全面需求。家庭成员组织管理模块：实现基于角色的访问控制（即RBAC），区分家长、财务官、普通成员等角色。各角色权限等级不同，细分单项权限也可以灵活更改。允许用于添加、删除和修改家庭成员信息。实时协同记账模块：实现收入和支出信息录入、查询和统计等功能，收支项的自定义分类，包含日常消费、银行账户储蓄、投资、借贷等，支持多人同时操作，包括审批流程，实现大额或计划外支出的家庭内部管控。智能分摊模块：系统内置多种账单分摊算法（如AA、比例、指定金额等）。预算协同管理模块：支持制定家庭总预算、分配个人子预算，并实时监控执行。预算可以随时更改。家庭财务目标与储蓄计划管理：实现共同目标的创建、进度追踪与贡献度统计。实现收入和储蓄计划的录入、查询和统计。多维度数据可视化分析模块：集成图表库，提供个人支出比例图表、成员对比、趋势分析、健康度评分等报表，财务报告共享，家庭“共读、共议、共决策”。智能提醒模块：实现账单到期、预算超支等提醒。</p>
+<p>允许用户为每笔账单打上隐私标签，控制可见范围，如“公共账目”“个人隐私账目”“夫妻账目”“仅家长可见”“自定义可见范围”等。课选择将个人敏感消费以匿名形式计入统计，不展示详细内容。</p>
+<p>通过这些功能模块的设计和实现，最后构建一个功能全面、易于操作的家庭财务协同管理系统。</p>
+<p>拟解决的主要问题：</p>
+<p>在家庭财务协同管理系统的设计与实现过程中，将解决以下几个问题：多用户协同下的数据一致性和操作冲突，可通过WebSocket实时同步以及乐观锁策略解决。家庭场景下，灵活复杂的财务权限管控问题，可通过自定义RBAC模型，数据行级权限解决。自动化、公平化的账单分摊与结算问题，可通过规则引擎配置分摊算法解决。从杂乱数据到直观决策支持的转化，可通过数据聚合与ECharts可视化解决。系统安全性、可扩展性与可维护性问题，将通过SpringBoot分层架构的模块化设计解决。</p>
+</blockquote>
 <h4 id="开发流程（deep-seek方案）"><a href="#开发流程（deep-seek方案）" class="headerlink" title="开发流程（deep seek方案）"></a>开发流程（deep seek方案）</h4><p>以下是开发家庭财务协同管理系统前端页面的详细流程，每一步都明确了需要完成的内容，以确保最终构建出功能全面、易于操作的系统。</p>
 <h5 id="1-需求分析与功能确认"><a href="#1-需求分析与功能确认" class="headerlink" title="1. 需求分析与功能确认"></a>1. 需求分析与功能确认</h5><ul>
 <li><strong>内容</strong>：与产品经理、后端开发人员共同梳理各模块的具体需求，明确每个页面的核心功能。<ul>
@@ -477,7 +487,7 @@
 </ul>
 <h6 id="9-7-隐私控制与权限管理"><a href="#9-7-隐私控制与权限管理" class="headerlink" title="9.7 隐私控制与权限管理"></a>9.7 隐私控制与权限管理</h6><ul>
 <li><strong>内容</strong>：<ul>
-<li>在账单录入时，提供隐私标签选择（公共、个人、夫妻、仅家长、自定义）。</li>
+<li>在账单录入时，提供隐私标签选择（公共、个人、仅家长、自定义）。</li>
 <li>在列表和详情页，根据当前用户角色和隐私标签控制可见性：例如个人隐私账目仅本人和家长可见；夫妻账目仅夫妻双方可见。</li>
 <li>实现匿名统计：当用户选择匿名时，在统计图表中只显示“匿名用户”分类，不展示具体描述。</li>
 </ul>
@@ -531,6 +541,21 @@
 </blockquote>
 <p>数据库名：finance（之前的数据库同名，只能删除了）</p>
 <p>sql文件：在<code>./sql/</code>文件夹中</p>
+<h3 id="项目梳理"><a href="#项目梳理" class="headerlink" title="项目梳理"></a>项目梳理</h3><p>📋 功能模块梳理<br>1️⃣ 用户认证与权限模块<br>核心功能： 登录、注册、权限控制、用户管理<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>LoginController.java<br>登录、登出、注册接口<br>🔹 Controller<br>UserController.java<br>用户信息管理（修改密码、昵称等）<br>🔹 Service<br>UserService.java<br>用户业务逻辑<br>🔹 Entity<br>User.java<br>用户实体<br>🔹 Security<br>DbRealm.java<br>Shiro 安全认证<br>🔹 Security<br>ShiroConfig.java<br>权限配置<br>🔸 View<br>login.html<br>登录页面<br>🔸 View<br>register.html<br>注册页面</p>
+<p>2️⃣ 家庭管理模块<br>核心功能： 创建家庭、成员管理、角色分配<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>FamilyController.java<br>家庭 CRUD、切换家庭<br>🔹 Controller<br>FamilyMemberController.java<br>成员管理、邀请成员<br>🔹 Service<br>FamilyService.java<br>家庭业务逻辑<br>🔹 Service<br>FamilyMemberService.java<br>成员业务逻辑<br>🔹 Entity<br>Family.java<br>家庭实体<br>🔹 Entity<br>FamilyMember.java<br>家庭成员关系<br>🔸 View<br>profile.html<br>个人信息&amp;家庭管理<br>🔸 View<br>member_list.html<br>成员列表</p>
+<p>3️⃣ 账目管理模块 ⭐核心模块<br>核心功能： 账单录入、分类管理、账户管理、账单共享<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>BillController.java<br>账单 CRUD、审核、共享<br>🔹 Controller<br>BillCategoryController.java<br>收支分类管理<br>🔹 Controller<br>AccountController.java<br>账户管理<br>🔹 Service<br>BillService.java<br>账单业务逻辑<br>🔹 Service<br>BillCategoryService.java<br>分类业务逻辑<br>🔹 Service<br>AccountService.java<br>账户业务逻辑<br>🔹 Entity<br>Bill.java<br>账单实体<br>🔹 Entity<br>BillCategory.java<br>分类实体<br>🔹 Entity<br>Account.java<br>账户实体<br>🔹 Entity<br>BillShare.java<br>账单共享记录<br>🔸 View<br>bill_entry.html<br>账单录入页面<br>🔸 View<br>bill_list.html<br>账单列表页面<br>🔸 View<br>category_list.html<br>分类管理页面<br>🔸 View<br>account_list.html<br>账户管理页面</p>
+<p>4️⃣ 预算管理模块<br>核心功能： 预算设置、超支提醒<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>BudgetController.java<br>预算 CRUD、预警<br>🔹 Service<br>BudgetService.java<br>预算业务逻辑<br>🔹 Entity<br>Budget.java<br>预算实体<br>🔹 Entity<br>BudgetPersonal.java<br>个人预算<br>🔹 Entity<br>BudgetPersonalRequest.java<br>个人预算申请<br>🔸 View<br>budget_list.html<br>预算列表页面</p>
+<p>5️⃣ 财务目标模块<br>核心功能： 目标设定、储蓄计划、进度跟踪<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>FinancialGoalController.java<br>目标 CRUD、进度更新<br>🔹 Service<br>FinancialGoalService.java<br>目标业务逻辑<br>🔹 Entity<br>FinancialGoal.java<br>财务目标实体<br>🔹 Entity<br>SavingsPlan.java<br>储蓄计划<br>🔸 View<br>goal_list.html<br>目标列表<br>🔸 View<br>goal_create.html<br>创建目标<br>🔸 View<br>goal_stat.html<br>目标统计<br>🔸 View<br>savings_plan_entry.html<br>储蓄计划录入</p>
+<p>6️⃣ 报表分析模块<br>核心功能： 数据统计、图表展示、报表分享<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>ReportController.java<br>各类统计报表接口<br>🔹 Service<br>ReportService.java<br>报表统计逻辑<br>🔸 View<br>report.html<br>报表分析页面</p>
+<p>7️⃣ 消息提醒模块<br>核心功能： 待办提醒、通知推送<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>ReminderController.java<br>提醒 CRUD、标记已读<br>🔹 Service<br>ReminderService.java<br>提醒业务逻辑<br>🔹 Service<br>NotificationService.java<br>通知服务<br>🔹 Entity<br>Reminder.java<br>提醒实体<br>🔹 Config<br>ScheduleTask.java<br>定时任务（预算超支检测等）<br>🔹 Config<br>WebSocketConfig.java<br>WebSocket 实时推送</p>
+<p>8️⃣ 系统基础模块<br>核心功能： 全局异常、通用响应、页面路由<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>PageController.java<br>页面路由跳转<br>🔹 Common<br>GlobalExceptionHandler.java<br>全局异常处理<br>🔹 Common<br>Msg.java<br>统一响应格式<br>🔹 Security<br>FamilyContext.java<br>家庭上下文（ThreadLocal）<br>🔹 Security<br>PasswordUtil.java<br>密码加密工具<br>🔹 Mapper<br>*.java + *.xml<br>MyBatis 数据访问层</p>
+<p>🗂️ 数据库迁移脚本</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs nix">sql<span class="hljs-symbol">/</span><br>├── <span class="hljs-number">001</span>_init_family_rbac.sql          <span class="hljs-comment"># 家庭&amp;RBAC 权限初始化</span><br>├── <span class="hljs-number">002</span>_init_finance_modules.sql      <span class="hljs-comment"># 财务模块初始化</span><br>├── <span class="hljs-number">003</span>_fix_bill_missing_column.sql   <span class="hljs-comment"># 账单表修复</span><br>├── <span class="hljs-number">004</span>_budget_personal_request.sql   <span class="hljs-comment"># 个人预算申请表</span><br>└── <span class="hljs-number">005</span>_report_share_discussion.sql   <span class="hljs-comment"># 报表分享评论表</span><br></code></pre></td></tr></table></figure>
+
+<p>🎯 核心业务流程</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs css">graph <span class="hljs-selector-tag">TD</span><br>    <span class="hljs-selector-tag">A</span><span class="hljs-selector-attr">[用户登录]</span> --&gt; <span class="hljs-selector-tag">B</span><span class="hljs-selector-attr">[选择/创建家庭]</span><br>    <span class="hljs-selector-tag">B</span> --&gt; C<span class="hljs-selector-attr">[账目录入]</span><br>    <span class="hljs-selector-tag">B</span> --&gt; D<span class="hljs-selector-attr">[预算管理]</span><br>    <span class="hljs-selector-tag">B</span> --&gt; E<span class="hljs-selector-attr">[财务目标]</span><br>    C --&gt; F<span class="hljs-selector-attr">[报表分析]</span><br>    D --&gt; F<br>    E --&gt; F<br>    F --&gt; <span class="hljs-selector-tag">G</span><span class="hljs-selector-attr">[数据可视化]</span><br>    <br>    H<span class="hljs-selector-attr">[定时任务]</span> --&gt; <span class="hljs-selector-tag">I</span><span class="hljs-selector-attr">[预算超支检测]</span><br>    H --&gt; J<span class="hljs-selector-attr">[账单到期提醒]</span><br>    <span class="hljs-selector-tag">I</span> --&gt; K<span class="hljs-selector-attr">[WebSocket 推送]</span><br>    J --&gt; K<br></code></pre></td></tr></table></figure>
+
+<p>📊 技术栈总结<br>后端框架： Spring Boot + MyBatis<br>安全框架： Apache Shiro<br>数据库： MySQL + Druid 连接池<br>前端： Thymeleaf + Bootstrap + jQuery<br>实时通信： WebSocket<br>图表： ECharts（报表模块）<br>这个项目是一个功能完整的家庭财务协作管理平台，涵盖了从日常记账到财务规划的全流程管理，支持多成员协同操作和权限控制。</p>
 <h3 id="协同功能"><a href="#协同功能" class="headerlink" title="协同功能"></a>协同功能</h3><p>要测试家庭财务系统的 协同功能 ，最直观的方法是模拟“多成员参与”和“实时交互”。您可以按照以下步骤进行操作：</p>
 <h4 id="1-准备多个测试账号"><a href="#1-准备多个测试账号" class="headerlink" title="1. 准备多个测试账号"></a>1. 准备多个测试账号</h4><p>协同的核心是多用户。您可以打开两个不同的浏览器（例如 Chrome 和 Edge），或者一个普通窗口加一个隐身窗口：</p>
 <ul>
@@ -598,7 +623,7 @@
 <p>金融工具：资金记录、安全网贷</p>
 <p>个人中心：我的理财、我的借贷、银行卡管理、账户安全</p>
 <h4 id="入口"><a href="#入口" class="headerlink" title="入口"></a>入口</h4><p><a target="_blank" rel="noopener" href="http://localhost:8081/">http://localhost:8081/</a></p>
-<h4 id="项目理解"><a href="#项目理解" class="headerlink" title="项目理解"></a>项目理解</h4><h5 id="一、项目是做什么的"><a href="#一、项目是做什么的" class="headerlink" title="一、项目是做什么的"></a>一、项目是做什么的</h5><p>这是一个 理财&#x2F;金融管理 Web 系统，可以理解为一个小型“理财平台”：</p>
+<h4 id="项目理解（cursor-auto提供）"><a href="#项目理解（cursor-auto提供）" class="headerlink" title="项目理解（cursor auto提供）"></a>项目理解（cursor auto提供）</h4><h5 id="一、项目是做什么的"><a href="#一、项目是做什么的" class="headerlink" title="一、项目是做什么的"></a>一、项目是做什么的</h5><p>这是一个 理财&#x2F;金融管理 Web 系统，可以理解为一个小型“理财平台”：</p>
 <ul>
 <li><p>普通用户：登录后可以买零钱理财、定期理财、基金、工资理财，申请网贷，绑银行卡，看自己的理财记录和资金流水等。</p>
 </li>
@@ -748,7 +773,7 @@
       
         <a href="/tags/AI/" class="print-no-link">#AI</a>
       
-        <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" class="print-no-link">#毕业设计</a>
+        <a href="/tags/%E6%AF%95%E8%AE%BE%E8%AE%BA%E6%96%87/" class="print-no-link">#毕设论文</a>
       
     </div>
   
@@ -804,6 +829,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2026/04/01/2026-4-1-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%BF%9B%E5%BA%A6/" title="毕业论文进度">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">毕业论文进度</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
