@@ -19,15 +19,15 @@
   <meta name="author" content="贰蓉">
   <meta name="keywords" content="">
   
-    <meta name="description" content="准备工作 1月21-29日：    卸载mysql8.0+版本，重装mysql5.7 安装idea专业版破解版本，构建maven 导入数据库语句 安装SQL Server 利用通义灵码，修改版本不兼容导致的语法编译问题，运行项目    2月17日：安装cursor，安装git连接github。 2月24日：cursor免费额度用完，选择trae国际版使用，使用Gemini-3-Flash-Prev">
+    <meta name="description" content="准备工作 1月21-29日：    卸载mysql8.0+版本，重装mysql5.7 安装idea专业版破解版本，构建maven 导入数据库语句 安装SQL Server 利用通义灵码，修改版本不兼容导致的语法编译问题，运行项目    2月17日：安装cursor，安装git连接github。  2月24日：cursor免费额度用完，选择trae国际版使用，使用Gemini-3-Flash-Pre">
 <meta property="og:type" content="article">
 <meta property="og:title" content="毕设日志">
 <meta property="og:url" content="http://example.com/2026/02/17/2026-2-17-%E6%AF%95%E8%AE%BE%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="贰蓉">
-<meta property="og:description" content="准备工作 1月21-29日：    卸载mysql8.0+版本，重装mysql5.7 安装idea专业版破解版本，构建maven 导入数据库语句 安装SQL Server 利用通义灵码，修改版本不兼容导致的语法编译问题，运行项目    2月17日：安装cursor，安装git连接github。 2月24日：cursor免费额度用完，选择trae国际版使用，使用Gemini-3-Flash-Prev">
+<meta property="og:description" content="准备工作 1月21-29日：    卸载mysql8.0+版本，重装mysql5.7 安装idea专业版破解版本，构建maven 导入数据库语句 安装SQL Server 利用通义灵码，修改版本不兼容导致的语法编译问题，运行项目    2月17日：安装cursor，安装git连接github。  2月24日：cursor免费额度用完，选择trae国际版使用，使用Gemini-3-Flash-Pre">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-17T08:55:07.000Z">
-<meta property="article:modified_time" content="2026-04-02T01:53:15.880Z">
+<meta property="article:modified_time" content="2026-04-02T05:14:44.440Z">
 <meta property="article:author" content="贰蓉">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="毕设论文">
@@ -301,10 +301,17 @@
 </ul>
 </blockquote>
 <ul>
-<li>2月17日：安装cursor，安装git连接github。</li>
-<li>2月24日：cursor免费额度用完，选择trae国际版使用，使用Gemini-3-Flash-Preview模型（免费）。利用finance（购买版）的文件夹结构补充代码，可以免去重新安装配置环境的繁琐。配合git进行版本管理。</li>
-<li>2月25日：trae国际版免费额度用完，免费试用专业版14天，使用GPT-5.2模型。已经更新到基本功能符合开题报告的版本，仍需要继续完善补充小问题。</li>
-<li>4月1日：将application.yml配置添加<code>address:0.0.0.0</code>监听所有网络接口，允许外部访问，<code>port:8081</code>端口不变。<code>ipconfig</code>命令查看ip地址，关闭防火墙后可以在同一局域网下不同设备访问<code>http://ip地址:8081/</code>，进行<strong>协同</strong>（同步）功能的测试了。记得完成之后重新开启防火墙保证安全。</li>
+<li><p>2月17日：安装cursor，安装git连接github。</p>
+</li>
+<li><p>2月24日：cursor免费额度用完，选择trae国际版使用，使用Gemini-3-Flash-Preview模型（免费）。利用finance（购买版）的文件夹结构补充代码，可以免去重新安装配置环境的繁琐。配合git进行版本管理。</p>
+</li>
+<li><p>2月25日：trae国际版免费额度用完，免费试用专业版14天，使用GPT-5.2模型。已经更新到基本功能符合开题报告的版本，仍需要继续完善补充小问题。</p>
+</li>
+<li><p>4月1日：将application.yml配置添加<code>address:0.0.0.0</code>监听所有网络接口，允许外部访问，<code>port:8081</code>端口不变。<code>ipconfig</code>命令查看ip地址，关闭防火墙后可以在同一局域网下不同设备访问<code>http://ip地址:8081/</code>，进行<strong>协同</strong>（同步）功能的测试了。记得完成之后重新开启防火墙保证安全。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 临时关闭防火墙</span><br>netsh advfirewall <span class="hljs-built_in">set</span> allprofiles state off<br><br><span class="hljs-comment"># 或者只关闭专用网络的防火墙</span><br>netsh advfirewall <span class="hljs-built_in">set</span> privateprofile state off<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>4月2日：补充一些功能。</p>
+</li>
 </ul>
 <h4 id="vibe-coding学习"><a href="#vibe-coding学习" class="headerlink" title="vibe coding学习"></a>vibe coding学习</h4><h5 id="Cursor模型上下文"><a href="#Cursor模型上下文" class="headerlink" title="Cursor模型上下文"></a>Cursor模型上下文</h5><h6 id="智能项目分析"><a href="#智能项目分析" class="headerlink" title="智能项目分析"></a>智能项目分析</h6><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs gherkin"><span class="hljs-comment"># 一次性理解完整项目</span><br><span class="hljs-meta">@整个项目文件夹</span><br><span class="hljs-meta">@技术设计文档.md</span><br><span class="hljs-meta">@API文档.md</span><br><span class="hljs-meta">@错误日志.txt</span><br><br><span class="hljs-comment"># 提问：分析项目架构瓶颈并提出优化方案</span><br><span class="hljs-comment"># AI可以基于所有材料给出综合建议</span><br></code></pre></td></tr></table></figure>
 
@@ -541,6 +548,8 @@
 </blockquote>
 <p>数据库名：finance（之前的数据库同名，只能删除了）</p>
 <p>sql文件：在<code>./sql/</code>文件夹中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">两个测试用户：<br>name  <span class="hljs-built_in">pwd</span><br>plj  123456<br>1     1<br></code></pre></td></tr></table></figure>
+
 <h3 id="项目梳理"><a href="#项目梳理" class="headerlink" title="项目梳理"></a>项目梳理</h3><p>📋 功能模块梳理<br>1️⃣ 用户认证与权限模块<br>核心功能： 登录、注册、权限控制、用户管理<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>LoginController.java<br>登录、登出、注册接口<br>🔹 Controller<br>UserController.java<br>用户信息管理（修改密码、昵称等）<br>🔹 Service<br>UserService.java<br>用户业务逻辑<br>🔹 Entity<br>User.java<br>用户实体<br>🔹 Security<br>DbRealm.java<br>Shiro 安全认证<br>🔹 Security<br>ShiroConfig.java<br>权限配置<br>🔸 View<br>login.html<br>登录页面<br>🔸 View<br>register.html<br>注册页面</p>
 <p>2️⃣ 家庭管理模块<br>核心功能： 创建家庭、成员管理、角色分配<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>FamilyController.java<br>家庭 CRUD、切换家庭<br>🔹 Controller<br>FamilyMemberController.java<br>成员管理、邀请成员<br>🔹 Service<br>FamilyService.java<br>家庭业务逻辑<br>🔹 Service<br>FamilyMemberService.java<br>成员业务逻辑<br>🔹 Entity<br>Family.java<br>家庭实体<br>🔹 Entity<br>FamilyMember.java<br>家庭成员关系<br>🔸 View<br>profile.html<br>个人信息&amp;家庭管理<br>🔸 View<br>member_list.html<br>成员列表</p>
 <p>3️⃣ 账目管理模块 ⭐核心模块<br>核心功能： 账单录入、分类管理、账户管理、账单共享<br>文件类型<br>文件路径<br>说明<br>🔹 Controller<br>BillController.java<br>账单 CRUD、审核、共享<br>🔹 Controller<br>BillCategoryController.java<br>收支分类管理<br>🔹 Controller<br>AccountController.java<br>账户管理<br>🔹 Service<br>BillService.java<br>账单业务逻辑<br>🔹 Service<br>BillCategoryService.java<br>分类业务逻辑<br>🔹 Service<br>AccountService.java<br>账户业务逻辑<br>🔹 Entity<br>Bill.java<br>账单实体<br>🔹 Entity<br>BillCategory.java<br>分类实体<br>🔹 Entity<br>Account.java<br>账户实体<br>🔹 Entity<br>BillShare.java<br>账单共享记录<br>🔸 View<br>bill_entry.html<br>账单录入页面<br>🔸 View<br>bill_list.html<br>账单列表页面<br>🔸 View<br>category_list.html<br>分类管理页面<br>🔸 View<br>account_list.html<br>账户管理页面</p>
@@ -553,7 +562,21 @@
 <figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs nix">sql<span class="hljs-symbol">/</span><br>├── <span class="hljs-number">001</span>_init_family_rbac.sql          <span class="hljs-comment"># 家庭&amp;RBAC 权限初始化</span><br>├── <span class="hljs-number">002</span>_init_finance_modules.sql      <span class="hljs-comment"># 财务模块初始化</span><br>├── <span class="hljs-number">003</span>_fix_bill_missing_column.sql   <span class="hljs-comment"># 账单表修复</span><br>├── <span class="hljs-number">004</span>_budget_personal_request.sql   <span class="hljs-comment"># 个人预算申请表</span><br>└── <span class="hljs-number">005</span>_report_share_discussion.sql   <span class="hljs-comment"># 报表分享评论表</span><br></code></pre></td></tr></table></figure>
 
 <p>🎯 核心业务流程</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs css">graph <span class="hljs-selector-tag">TD</span><br>    <span class="hljs-selector-tag">A</span><span class="hljs-selector-attr">[用户登录]</span> --&gt; <span class="hljs-selector-tag">B</span><span class="hljs-selector-attr">[选择/创建家庭]</span><br>    <span class="hljs-selector-tag">B</span> --&gt; C<span class="hljs-selector-attr">[账目录入]</span><br>    <span class="hljs-selector-tag">B</span> --&gt; D<span class="hljs-selector-attr">[预算管理]</span><br>    <span class="hljs-selector-tag">B</span> --&gt; E<span class="hljs-selector-attr">[财务目标]</span><br>    C --&gt; F<span class="hljs-selector-attr">[报表分析]</span><br>    D --&gt; F<br>    E --&gt; F<br>    F --&gt; <span class="hljs-selector-tag">G</span><span class="hljs-selector-attr">[数据可视化]</span><br>    <br>    H<span class="hljs-selector-attr">[定时任务]</span> --&gt; <span class="hljs-selector-tag">I</span><span class="hljs-selector-attr">[预算超支检测]</span><br>    H --&gt; J<span class="hljs-selector-attr">[账单到期提醒]</span><br>    <span class="hljs-selector-tag">I</span> --&gt; K<span class="hljs-selector-attr">[WebSocket 推送]</span><br>    J --&gt; K<br></code></pre></td></tr></table></figure>
+<pre><code class=" mermaid">graph TD
+    A[用户登录] --&gt; B[选择/创建家庭]
+    B --&gt; C[账目录入]
+    B --&gt; D[预算管理]
+    B --&gt; E[财务目标]
+    C --&gt; F[报表分析]
+    D --&gt; F
+    E --&gt; F
+    F --&gt; G[数据可视化]
+    
+    H[定时任务] --&gt; I[预算超支检测]
+    H --&gt; J[账单到期提醒]
+    I --&gt; K[WebSocket 推送]
+    J --&gt; K
+</code></pre>
 
 <p>📊 技术栈总结<br>后端框架： Spring Boot + MyBatis<br>安全框架： Apache Shiro<br>数据库： MySQL + Druid 连接池<br>前端： Thymeleaf + Bootstrap + jQuery<br>实时通信： WebSocket<br>图表： ECharts（报表模块）<br>这个项目是一个功能完整的家庭财务协作管理平台，涵盖了从日常记账到财务规划的全流程管理，支持多成员协同操作和权限控制。</p>
 <h3 id="协同功能"><a href="#协同功能" class="headerlink" title="协同功能"></a>协同功能</h3><p>要测试家庭财务系统的 协同功能 ，最直观的方法是模拟“多成员参与”和“实时交互”。您可以按照以下步骤进行操作：</p>
@@ -830,9 +853,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/04/01/2026-4-1-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%BF%9B%E5%BA%A6/" title="毕业论文进度">
+                      <a href="/2026/04/01/2026-4-1-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%BF%9B%E5%BA%A6/" title="毕业论文进度（初稿）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">毕业论文进度</span>
+                        <span class="hidden-mobile">毕业论文进度（初稿）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
